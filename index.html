@@ -42,7 +42,7 @@ html,body{height:100%;}
 html{scroll-behavior:smooth;}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased;overflow:hidden;}
 .app{height:100vh;height:100dvh;overflow-y:auto;overflow-x:hidden;position:relative;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;}
- 
+
 /* ============ TOP BAR ============ */
 .topbar{background:var(--ink);color:#fff;}
 .topbar .inner{max-width:var(--maxw);margin:auto;padding:11px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
@@ -50,7 +50,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .brand .mark{width:26px;height:26px;border-radius:7px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
 .topbar .meta{font-size:11.5px;color:#aab4c8;white-space:nowrap;}
 @media(max-width:560px){.topbar .meta{display:none;}}
- 
+
 /* ============ HERO ============ */
 .hero{background:linear-gradient(180deg,#16294a 0%,#14213d 100%);color:#fff;padding:60px 24px 132px;text-align:center;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.05) 1px,transparent 0);background-size:26px 26px;pointer-events:none;}
@@ -60,7 +60,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .hero-sub{font-size:15px;color:#b8c2d6;max-width:600px;margin:0 auto 30px;line-height:1.95;position:relative;}
 .hero-q{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;max-width:680px;margin:0 auto;position:relative;}
 .hero-q span{font-size:12.5px;color:#d3dae8;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:100px;padding:6px 15px;}
- 
+
 /* ============ TAB BAR ============ */
 .tabwrap{position:sticky;top:0;z-index:300;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);box-shadow:0 2px 14px rgba(20,33,61,.05);margin-top:-72px;}
 .tabhint{max-width:var(--maxw);margin:auto;padding:9px 24px 0;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--accent);font-weight:500;}
@@ -77,12 +77,12 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .tab-btn.active .tn{background:var(--accent);color:#fff;}
 .tab-btn.active .tsub{color:#aeb8cb;}
 .tab-btn.new::after{content:'NEW';font-size:8.5px;font-weight:700;font-family:'JetBrains Mono',monospace;color:#fff;background:var(--accent);padding:1px 5px;border-radius:5px;letter-spacing:.04em;}
- 
+
 /* ============ PANELS ============ */
 .panel{display:none;animation:fadepanel .4s ease;}
 .panel.active{display:block;}
 @keyframes fadepanel{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
- 
+
 section{padding:58px 24px;}
 section.alt{background:var(--paper);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
 .container{max-width:var(--maxw);margin:0 auto;}
@@ -91,13 +91,13 @@ section.alt{background:var(--paper);border-top:1px solid var(--border);border-bo
 .s-title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,3vw,31px);line-height:1.3;color:var(--ink);margin-bottom:12px;letter-spacing:.005em;}
 .s-desc{font-size:14.5px;color:var(--text-2);margin-bottom:38px;max-width:660px;line-height:1.9;}
 .s-desc strong{color:var(--ink);font-weight:700;}
- 
+
 /* ============ TOOLTIP TERM ============ */
 .term{border-bottom:1.5px dashed var(--accent);cursor:help;position:relative;color:inherit;font-weight:500;}
 .term::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:12px;font-weight:400;line-height:1.65;padding:10px 13px;border-radius:9px;width:max-content;max-width:250px;white-space:normal;pointer-events:none;opacity:0;transition:opacity .18s;z-index:999;box-shadow:var(--shadow-lg);}
 .term::before{content:'';position:absolute;bottom:calc(100% + 4px);left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--ink);opacity:0;transition:opacity .18s;z-index:999;pointer-events:none;}
 .term:hover::after,.term:hover::before{opacity:1;}
- 
+
 /* ============ GRIDS / CARDS ============ */
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
@@ -108,7 +108,7 @@ section.alt{background:var(--paper);border-top:1px solid var(--border);border-bo
 .card h3{font-size:15.5px;font-weight:700;color:var(--ink);margin-bottom:8px;display:flex;align-items:center;gap:9px;}
 .card p{font-size:13.5px;color:var(--text-2);line-height:1.75;}
 .card .ico{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:14px;}
- 
+
 /* ============ SUMMARY / STEPS / DATAFLOW ============ */
 .summary-wrap{max-width:var(--maxw);margin:0 auto;padding:36px 24px 0;}
 .summary{display:flex;gap:15px;background:var(--navy-soft);border:1px solid var(--navy-line);border-left:4px solid var(--accent);border-radius:var(--rl);padding:17px 22px;}
@@ -134,14 +134,14 @@ section.alt{background:var(--paper);border-top:1px solid var(--border);border-bo
 .df-node .dft{font-size:13px;font-weight:700;color:var(--ink);margin:5px 0 3px;}
 .df-node .dfd{font-size:11.5px;color:var(--text-2);line-height:1.5;}
 .df-dest{margin-top:9px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:var(--accent-dark);background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:100px;padding:3px 10px;display:inline-block;}
- 
+
 /* ============ EXAMPLE CARDS ============ */
 .exbadge{display:inline-block;font-size:11px;font-weight:700;color:var(--accent-dark);background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:100px;padding:2px 11px;margin-bottom:11px;}
 .exr{font-size:12.5px;color:var(--text-2);line-height:1.55;display:flex;gap:8px;padding:3px 0;}
 .exr b{color:var(--ink);font-weight:700;flex-shrink:0;min-width:54px;}
 .excost{margin-top:11px;padding-top:10px;border-top:1px dashed var(--border-2);font-size:12.5px;color:var(--text-2);}
 .excost b{color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:13px;}
- 
+
 /* ============ TAGS / PILLS ============ */
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;}
 .tag{font-size:11.5px;font-weight:600;padding:3px 11px;border-radius:100px;font-family:'JetBrains Mono',monospace;}
@@ -151,7 +151,7 @@ section.alt{background:var(--paper);border-top:1px solid var(--border);border-bo
 .tag.accent{background:var(--accent-soft);color:var(--accent-dark);border:1px solid var(--accent-line);}
 .tag.purple{background:var(--purple-soft);color:var(--purple);border:1px solid var(--purple-line);}
 .tag.blue{background:var(--blue-soft);color:var(--blue);border:1px solid var(--blue-line);}
- 
+
 /* ============ CALLOUT ============ */
 .callout{border-radius:var(--rl);padding:18px 22px;margin-top:24px;border:1px solid var(--border);border-left-width:4px;background:var(--surface);}
 .callout .ct{font-size:13px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:7px;}
@@ -162,7 +162,7 @@ section.alt{background:var(--paper);border-top:1px solid var(--border);border-bo
 .callout.warn{border-left-color:var(--amber);background:var(--amber-soft);} .callout.warn .ct{color:var(--amber);}
 .callout.danger{border-left-color:var(--red);background:var(--red-soft);} .callout.danger .ct{color:var(--red);}
 .callout.ok{border-left-color:var(--green);background:var(--green-soft);} .callout.ok .ct{color:var(--green);}
- 
+
 /* ============ TABLE ============ */
 .table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--rl);background:var(--surface);box-shadow:var(--shadow-sm);}
 table{width:100%;border-collapse:collapse;font-size:13px;}
@@ -179,7 +179,7 @@ tbody td:first-child{font-weight:700;color:var(--ink);}
 .pill.hard{background:var(--red-soft);color:var(--red);}
 .cost-free{color:var(--green);font-weight:700;}
 .cost-paid{color:var(--accent);font-weight:700;}
- 
+
 /* ============ TOOL READING / LINKS ============ */
 .rd{display:block;font-size:10.5px;color:var(--text-3);font-weight:400;letter-spacing:.02em;margin-top:1px;}
 .tlink{color:var(--navy);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s;display:inline-flex;align-items:center;gap:3px;}
@@ -191,22 +191,22 @@ tbody td:first-child{font-weight:700;color:var(--ink);}
 .card-links{display:flex;flex-wrap:wrap;gap:10px 14px;margin-top:14px;align-items:flex-start;}
 .toolitem{display:flex;flex-direction:column;align-items:flex-start;gap:3px;}
 .linknote{font-size:11.5px;color:var(--text-3);margin-top:14px;display:flex;align-items:center;gap:6px;}
- 
+
 /* ============ NEXT-TAB BUTTON ============ */
 .nextbar{max-width:var(--maxw);margin:46px auto 0;display:flex;justify-content:flex-end;}
 .nextbtn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;border:none;border-radius:12px;padding:14px 24px;font-family:'Noto Sans JP',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;box-shadow:var(--shadow-md);}
 .nextbtn:hover{background:var(--navy);transform:translateX(3px);}
 .nextbtn .arr{font-size:18px;color:#f0a070;}
 .nextbtn small{display:block;font-size:10.5px;color:#aeb8cb;font-weight:400;}
- 
+
 /* ============ FADE IN ============ */
 .fade-in{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease;}
 .fade-in.visible{opacity:1;transform:translateY(0);}
- 
+
 /* ============ FOOTER ============ */
 footer{background:var(--ink);color:#9aa6bd;text-align:center;padding:34px 24px;font-size:12.5px;line-height:1.8;}
 footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weight:600;margin-bottom:6px;}
- 
+
 /* ============ JOURNEY (tab1) ============ */
 .journey{display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative;margin-top:8px;}
 @media(max-width:860px){.journey{grid-template-columns:repeat(2,1fr);gap:14px 0;}}
@@ -220,7 +220,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
 .jstep .jt{font-size:13.5px;font-weight:700;color:var(--ink);margin:2px 0 4px;}
 .jstep .jd{font-size:11.5px;color:var(--text-2);line-height:1.55;}
 .jstep .jgo{margin-top:7px;font-size:11px;color:var(--accent-dark);font-weight:600;cursor:pointer;border:none;background:none;font-family:inherit;text-decoration:underline;text-underline-offset:2px;}
- 
+
 /* ============ ANALOGY (tab1) ============ */
 .analogy{display:flex;align-items:stretch;gap:0;flex-wrap:wrap;background:var(--navy-soft);border:1px solid var(--navy-line);border-radius:var(--rl);overflow:hidden;margin-top:24px;}
 .an-item{flex:1;min-width:200px;padding:20px 22px;display:flex;align-items:center;gap:14px;}
@@ -230,7 +230,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
 .an-label{font-size:10.5px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.07em;}
 .an-val{font-size:14px;font-weight:700;color:var(--ink);}
 .an-sub{font-size:11.5px;color:var(--text-2);}
- 
+
 /* ============ BEFORE/AFTER (tab2) ============ */
 .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
 @media(max-width:760px){.ba-grid{grid-template-columns:1fr;}}
@@ -241,7 +241,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
 .ba-body{padding:16px 20px;}
 .ba-row{display:flex;gap:10px;font-size:13px;color:var(--text-2);padding:7px 0;line-height:1.6;}
 .ba-row .bi{flex-shrink:0;}
- 
+
 /* ============ WORKSPACE / PROS-CONS (tab2) ============ */
 .ws-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
 @media(max-width:860px){.ws-grid{grid-template-columns:1fr;}}
@@ -256,7 +256,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
 .ws-cons{margin-top:14px;}
 .ws-li{font-size:12.5px;color:var(--text-2);line-height:1.6;padding:3px 0 3px 16px;position:relative;}
 .ws-li::before{content:'';position:absolute;left:2px;top:10px;width:5px;height:5px;border-radius:50%;background:var(--text-3);}
- 
+
 /* ============ TOOL MAP (tab2) ============ */
 .tool-cat{margin-bottom:14px;border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;background:var(--surface);}
 .tool-cat-head{padding:13px 18px;display:flex;align-items:center;gap:11px;background:var(--paper);border-bottom:1px solid var(--border-2);}
@@ -267,7 +267,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
 .tool-chip{flex:1;min-width:200px;border:1px solid var(--border-2);border-radius:var(--r);padding:11px 14px;background:var(--paper);}
 .tool-chip .tch-name{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--navy);}
 .tool-chip .tch-desc{font-size:12px;color:var(--text-2);line-height:1.55;margin-top:3px;}
- 
+
 /* ============ PIPELINE (tab2) ============ */
 .pipe{display:flex;align-items:center;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--navy-soft);border:1px solid var(--navy-line);border-radius:var(--rl);padding:24px;}
 .pipe-node{background:var(--surface);border:1.5px solid var(--navy-line);border-radius:var(--r);padding:11px 16px;text-align:center;min-width:120px;}
@@ -276,7 +276,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
 .pipe-node .pn-sub{font-size:10.5px;color:var(--text-2);}
 .pipe-arr{font-size:20px;color:var(--accent);font-weight:700;}
 @media(max-width:680px){.pipe-arr{transform:rotate(90deg);}}
- 
+
 /* ============ OS COMPARE (tab2) ============ */
 .os-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
 @media(max-width:680px){.os-grid{grid-template-columns:1fr;}}
@@ -284,7 +284,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
 </head>
 <body>
 <div class="app" id="app">
- 
+
 <!-- ===================== TOP BAR ===================== -->
 <div class="topbar">
   <div class="inner">
@@ -292,7 +292,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
     <div class="meta">AIで作ったサイト・ツールを安全に世へ出すための実践ガイド</div>
   </div>
 </div>
- 
+
 <!-- ===================== HERO ===================== -->
 <div class="hero">
   <div class="hero-eyebrow">🗺 AI開発 → Web公開 完全ガイド</div>
@@ -310,11 +310,11 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
     <span>📊 規模と予算</span>
   </div>
 </div>
- 
+
 <!-- ===================== TAB BAR ===================== -->
 <div class="tabwrap">
   <div class="tabhint">
-    <span class="pulse">👆</span> タブをクリックすると内容が切り替わります（全7章）
+    <span class="pulse">👆</span> タブをクリックすると内容が切り替わります（全8章）
   </div>
   <div class="tabbar" id="tabbar">
     <button class="tab-btn active" data-tab="t1"><span class="tn">1</span><span><span class="tlabel">全体像</span><span class="tsub">全体の流れ</span></span></button>
@@ -324,13 +324,14 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
     <button class="tab-btn new" data-tab="t5"><span class="tn">5</span><span><span class="tlabel">セキュリティ</span><span class="tsub">安全な運用</span></span></button>
     <button class="tab-btn new" data-tab="t6"><span class="tn">6</span><span><span class="tlabel">規模と予算</span><span class="tsub">費用の考え方</span></span></button>
     <button class="tab-btn" data-tab="t7"><span class="tn">7</span><span><span class="tlabel">用語集・FAQ</span><span class="tsub">補足資料</span></span></button>
+    <button class="tab-btn new" data-tab="t8"><span class="tn">8</span><span><span class="tlabel">AI開発ツール</span><span class="tsub">ツール比較</span></span></button>
   </div>
 </div>
- 
+
 <!-- ===================== TAB 1: 全体像 ===================== -->
 <div class="panel active" id="t1">
   <div class="summary-wrap"><div class="summary"><div class="sm-ico">🗺</div><div><div class="sm-title">このタブの要点</div><div class="sm-list"><span class="n">1</span><b>全体は「作る→整える→公開→保管→守る→育てる」の流れ</b><br><span class="n">2</span>つまずきの元は「作る・公開・保存」3つの場所の混同<br><span class="n">3</span>まず全体像をつかみ、知りたいタブへ進めばOK</div></div></div></div>
- 
+
   <section>
     <div class="container">
       <div class="s-label">STEP 00 — 全体像</div>
@@ -340,13 +341,14 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
         全体を6つのステップに分けると、どこで何を考えればよいかが見えてきます。
         各ステップは、このサイトのどのタブで詳しく扱うかとつながっています。
       </p>
- 
+
       <div class="journey fade-in">
         <div class="jstep">
           <div class="jdot">🤖</div>
           <div class="jn">STEP 1</div>
           <div class="jt">作る</div>
           <div class="jd">AIにコードやHTMLを出力してもらう</div>
+          <button class="jgo" data-goto="t8">タブ8へ →</button>
         </div>
         <div class="jstep">
           <div class="jdot">🛠</div>
@@ -384,7 +386,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
           <button class="jgo" data-goto="t6">タブ6へ →</button>
         </div>
       </div>
- 
+
       <div class="callout tip fade-in">
         <div class="ct">💡 このガイドの歩き方</div>
         <div class="cb">
@@ -395,7 +397,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
       </div>
     </div>
   </section>
- 
+
   <section class="alt">
     <div class="container">
       <div class="s-label">CORE CONCEPT</div>
@@ -405,7 +407,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
         Web公開でつまずく原因の多くは、役割の違う3つが頭の中で混ざっているからです。
         まずこの3つを分けて理解するのが、最重要ステップです。
       </p>
- 
+
       <div class="grid-3">
         <div class="card fade-in">
           <div class="ico" style="background:var(--navy-soft);">🛠</div>
@@ -438,7 +440,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
           </div>
         </div>
       </div>
- 
+
       <div class="analogy fade-in">
         <div class="an-item">
           <div class="an-emoji">🏗</div>
@@ -455,7 +457,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
       </div>
     </div>
   </section>
- 
+
   <section>
     <div class="container">
       <div class="s-label">EXAMPLE</div>
@@ -487,16 +489,16 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
       </div>
     </div>
   </section>
- 
+
   <div class="nextbar">
     <button class="nextbtn" data-goto="t2">次は環境づくり<span class="arr">→</span><small>タブ2：環境とツール</small></button>
   </div>
 </div>
- 
+
 <!-- ===================== TAB 2: 環境とツール ===================== -->
 <div class="panel" id="t2">
   <div class="summary-wrap"><div class="summary"><div class="sm-ico">🛠</div><div><div class="sm-title">このタブの要点</div><div class="sm-list"><span class="n">1</span><b>ツールは「名前」でなく「役割」で覚えると迷わない</b><br><span class="n">2</span>目的は4つ＝保存・管理・戻せる・共有<br><span class="n">3</span>最低限は VS Code＋GitHub＋Node.js（＋ノート）</div></div></div></div>
- 
+
   <section>
     <div class="container">
       <div class="s-label">SECTION 01</div>
@@ -505,7 +507,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
         「メモはチャットに書けばいい」「ファイルはデスクトップに置けばいい」——それでも始められます。
         でも作業が少し増えると、<strong>必ずこの壁にぶつかります。</strong>
       </p>
- 
+
       <div class="ba-grid fade-in">
         <div class="ba-card">
           <div class="ba-head bad">😰 環境整備なし — よくある混乱</div>
@@ -528,7 +530,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
           </div>
         </div>
       </div>
- 
+
       <div class="callout tip fade-in">
         <div class="ct">💡 ツールを使う目的は、つまるところ4つ</div>
         <div class="cb">
@@ -538,7 +540,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
       </div>
     </div>
   </section>
- 
+
   <section class="alt">
     <div class="container">
       <div class="s-label">SECTION 02</div>
@@ -546,7 +548,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
       <p class="s-desc">
         作業する場所は大きく3種類。それぞれ得意・不得意があり、<strong>組み合わせて使う</strong>のが基本です。
       </p>
- 
+
       <div class="ws-grid">
         <div class="ws-card fade-in">
           <div class="ws-top">
@@ -602,7 +604,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
       </div>
     </div>
   </section>
- 
+
   <section>
     <div class="container">
       <div class="s-label">SECTION 03</div>
@@ -610,7 +612,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
       <p class="s-desc">
         ツールは「名前」ではなく<strong>「カテゴリ（役割）」</strong>で覚えるのが近道です。同じカテゴリのものは、どれか一つ使えれば十分なケースが多いです。
       </p>
- 
+
       <div class="tool-cat fade-in">
         <div class="tool-cat-head"><span class="tc-emoji">📝</span><span class="tc-name">ノート・知識管理</span><span class="tc-purpose">プロンプトや手順を保存・検索する</span></div>
         <div class="tool-cat-body">
@@ -644,14 +646,14 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
           <div class="tool-chip"><div class="tch-name"><a class="tlink" href="https://nodejs.org" target="_blank" rel="noopener">Node.js / npm <span class="ext">↗</span></a></div><div class="rd">ノード・ジェイエス / エヌ・ピー・エム</div><div class="tch-desc"><span class="term" data-tip="パッケージ：他の人が作った再利用できる部品（ライブラリ）。npmはそれを取り寄せる仕組み。">部品（パッケージ）</span>を取り寄せて管理する仕組み</div></div>
         </div>
       </div>
- 
+
       <div class="callout info fade-in">
         <div class="ct">ℹ️ 最初に最低限そろえるなら</div>
         <div class="cb"><strong>VS Code（エディタ）＋ GitHub（履歴・公開連携）＋ Node.js（部品管理）</strong>の3つ。ここに知識管理（Obsidian か Notion）を足せば、個人開発の土台は完成です。</div>
       </div>
     </div>
   </section>
- 
+
   <section class="alt">
     <div class="container">
       <div class="s-label">SECTION 04</div>
@@ -674,7 +676,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
       </div>
     </div>
   </section>
- 
+
   <section>
     <div class="container">
       <div class="s-label">SECTION 05</div>
@@ -698,7 +700,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
       </div>
     </div>
   </section>
- 
+
   <div class="nextbar">
     <button class="nextbtn" data-goto="t3">いよいよ公開へ<span class="arr">→</span><small>タブ3：公開する</small></button>
   </div>
@@ -706,7 +708,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
 <!-- ===================== TAB 3: 公開する ===================== -->
 <div class="panel" id="t3">
   <div class="summary-wrap"><div class="summary"><div class="sm-ico">🚀</div><div><div class="sm-title">このタブの要点</div><div class="sm-list"><span class="n">1</span><b>公開は「作る→置く→公開→更新」の4ステップ</b><br><span class="n">2</span>作るもの（LP／アプリ／サーバー処理）で構成が決まる<br><span class="n">3</span>まずHTML1枚をNetlifyに置いて体験するのが近道</div></div></div></div>
- 
+
   <section>
     <div class="container">
       <div class="s-label">SECTION 01</div>
@@ -715,7 +717,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
         「公開」と聞くと難しそうですが、流れはシンプルです。
         最初はHTML1枚を<strong>ドラッグ&ドロップするだけ</strong>でも公開できます。まずは「作る→公開する」を体で覚えるのが近道です。
       </p>
- 
+
       <div class="grid-4">
         <div class="card fade-in">
           <div class="ico" style="background:var(--navy-soft);font-family:'JetBrains Mono';font-weight:700;color:var(--navy);">1</div>
@@ -738,20 +740,20 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
           <p>変更を反映すると、本番サイトも最新の状態に切り替わる。</p>
         </div>
       </div>
- 
+
       <div class="callout tip fade-in">
         <div class="ct">💡 いちばん簡単な公開体験</div>
         <div class="cb">AIにHTMLで出力してもらい、<strong>Netlify のドラッグ&ドロップ</strong>に置くだけ。数分でURLが発行されます。完成度より「まず公開できた」という体験を優先しましょう。</div>
       </div>
     </div>
   </section>
- 
+
   <section class="alt">
     <div class="container">
       <div class="s-label">SECTION 02</div>
       <div class="s-title">「何を作りたいか」で選び方が決まる</div>
       <p class="s-desc">迷ったらこの判断で。<strong>9割のケース</strong>はこれでカバーできます。</p>
- 
+
       <div class="grid-3">
         <div class="card fade-in">
           <h3>📄 LP・紹介ページ・ブログ</h3>
@@ -782,7 +784,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
       </div>
     </div>
   </section>
- 
+
   <section>
     <div class="container">
       <div class="s-label">SECTION 03</div>
@@ -805,7 +807,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
       <div class="linknote">🔗 サービス名の <span class="ext">↗</span> をクリックすると、公式サイト（別タブ）が開きます。</div>
     </div>
   </section>
- 
+
   <section class="alt">
     <div class="container">
       <div class="s-label">SECTION 04</div>
@@ -831,7 +833,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
       </div>
     </div>
   </section>
- 
+
   <section>
     <div class="container">
       <div class="s-label">SECTION 05</div>
@@ -854,7 +856,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
       </div>
     </div>
   </section>
- 
+
   <section class="alt">
     <div class="container">
       <div class="s-label">EXAMPLE</div>
@@ -898,7 +900,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
       </div>
     </div>
   </section>
- 
+
   <section>
     <div class="container">
       <div class="s-label">DOMAIN</div>
@@ -931,16 +933,16 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
       </div>
     </div>
   </section>
- 
+
   <div class="nextbar">
     <button class="nextbtn" data-goto="t4">データの置き場所へ<span class="arr">→</span><small>タブ4：データ保管</small></button>
   </div>
 </div>
- 
+
 <!-- ===================== TAB 4: データ保管 ===================== -->
 <div class="panel" id="t4">
   <div class="summary-wrap"><div class="summary"><div class="sm-ico">🗄</div><div><div class="sm-title">このタブの要点</div><div class="sm-list"><span class="n">1</span><b>データは3種類＝静的ファイル／ユーザーデータ／メディア</b><br><span class="n">2</span>基本形は「サイト本体＝公開サービス＋データ＝Supabase」<br><span class="n">3</span>控え（バックアップ）は必ず持つ</div></div></div></div>
- 
+
   <section>
     <div class="container">
       <div class="s-label">SECTION 01</div>
@@ -968,7 +970,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
           <div class="tags"><span class="tag green">ストレージ</span></div>
         </div>
       </div>
- 
+
       <div style="margin-top:30px;" class="fade-in">
         <div style="font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:8px;">🗺 サンプルアプリの「データ配置図」</div>
         <div class="dataflow">
@@ -999,7 +1001,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
       </div>
     </div>
   </section>
- 
+
   <section class="alt">
     <div class="container">
       <div class="s-label">SECTION 02</div>
@@ -1024,7 +1026,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
       </div>
     </div>
   </section>
- 
+
   <section>
     <div class="container">
       <div class="s-label">SECTION 03</div>
@@ -1050,7 +1052,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
       </div>
     </div>
   </section>
- 
+
   <div class="nextbar">
     <button class="nextbtn" data-goto="t5">安全の守り方へ<span class="arr">→</span><small>タブ5：セキュリティ</small></button>
   </div>
@@ -1078,7 +1080,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
 .flowsec .fn .fs{font-size:10.5px;color:var(--text-2);}
 .flowsec .fa{font-size:20px;color:var(--accent);}
 @media(max-width:680px){.flowsec .fa{transform:rotate(90deg);}}
- 
+
 .tier{border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;background:var(--surface);display:flex;flex-direction:column;}
 .tier-head{padding:18px 20px;color:#fff;}
 .tier-head.s{background:linear-gradient(135deg,#2a7a52,#1d6b46);}
@@ -1094,7 +1096,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
 .tier-cost{margin-top:12px;padding:12px;border-radius:var(--r);background:var(--paper);text-align:center;}
 .tier-cost .tcl{font-size:10.5px;color:var(--text-3);font-weight:700;letter-spacing:.05em;}
 .tier-cost .tcv{font-size:18px;font-weight:700;color:var(--accent);font-family:'JetBrains Mono',monospace;}
- 
+
 .gloss-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
 @media(max-width:680px){.gloss-grid{grid-template-columns:1fr;}}
 .gloss-card{border:1px solid var(--border);border-radius:var(--rl);padding:17px 19px;background:var(--surface);transition:box-shadow .15s;}
@@ -1108,7 +1110,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
 .gloss-def{font-size:12.5px;color:var(--text-2);line-height:1.7;}
 .gloss-ex{margin-top:9px;padding:8px 11px;background:var(--paper);border-radius:var(--r);font-size:11.5px;color:var(--text-2);line-height:1.55;border-left:3px solid var(--border);}
 .gloss-ex::before{content:'例: ';font-weight:700;color:var(--text-3);}
- 
+
 .faq-list{display:flex;flex-direction:column;gap:11px;}
 .faq-item{border:1px solid var(--border);border-radius:var(--rl);background:var(--surface);overflow:hidden;}
 .faq-q{padding:15px 19px;display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;user-select:none;font-size:13.5px;font-weight:600;color:var(--ink);transition:background .15s;}
@@ -1119,7 +1121,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
 .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;padding:0 19px;font-size:13px;color:var(--text-2);line-height:1.85;}
 .faq-item.open .faq-a{max-height:600px;padding:0 19px 17px;}
 .faq-a strong{color:var(--ink);}
- 
+
 .roadmap{position:relative;padding-left:30px;}
 .roadmap::before{content:'';position:absolute;left:11px;top:6px;bottom:6px;width:2px;background:var(--navy-line);}
 .rstep{position:relative;padding-bottom:24px;}
@@ -1128,7 +1130,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
 .rstage{font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.05em;font-family:'JetBrains Mono',monospace;}
 .rtitle{font-size:15px;font-weight:700;color:var(--ink);margin:2px 0 5px;}
 .rbody{font-size:13px;color:var(--text-2);line-height:1.75;}
- 
+
 .checklist{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:8px 22px 20px;}
 .ci{display:flex;align-items:flex-start;gap:11px;padding:11px 0;border-bottom:1px solid var(--border-2);cursor:pointer;font-size:13.5px;color:var(--text);line-height:1.6;}
 .ci:last-of-type{border-bottom:none;}
@@ -1139,11 +1141,11 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
 .prog-fill{height:100%;width:0;background:linear-gradient(90deg,var(--navy),var(--accent));border-radius:100px;transition:width .4s ease;}
 .prog-label{font-size:12.5px;font-weight:700;color:var(--ink);white-space:nowrap;font-family:'JetBrains Mono',monospace;}
 </style>
- 
+
 <!-- ===================== TAB 5: セキュリティ ===================== -->
 <div class="panel" id="t5">
   <div class="summary-wrap"><div class="summary"><div class="sm-ico">🔐</div><div><div class="sm-title">このタブの要点</div><div class="sm-list"><span class="n">1</span><b>最重要はAPIキーを環境変数で隠すこと</b><br><span class="n">2</span>HTTPSは主要サービスで標準。認証・決済は専用サービスへ<br><span class="n">3</span>個人情報は集めすぎない・必要最小限に</div></div></div></div>
- 
+
   <section>
     <div class="container">
       <div class="s-label">SECTION 01</div>
@@ -1161,7 +1163,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
       </div>
     </div>
   </section>
- 
+
   <section class="alt">
     <div class="container">
       <div class="s-label">守り ①</div>
@@ -1171,7 +1173,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
         これがコードに直書きされたまま公開されると、第三者に拾われ、<strong>勝手に使われて高額課金</strong>される事故につながります。
         対策は、キーをコードに書かず<span class="term" data-tip="環境変数：キーやパスワードをコードと切り離し、サービス側に安全に預けて呼び出す仕組み。">環境変数</span>として預けることです。
       </p>
- 
+
       <div class="keyfig">
         <div class="keybox ng fade-in">
           <div class="keybox-head">❌ やってはいけない（直書き）</div>
@@ -1192,7 +1194,7 @@ fetch(api, { headers: key });</div>
           </div>
         </div>
       </div>
- 
+
       <div class="callout danger fade-in">
         <div class="ct">⚠️ よくある事故：GitHubにキーを上げてしまう</div>
         <div class="cb"><span class="mono">.env</span> ファイルは <span class="term" data-tip=".gitignore：Gitの管理から外したいファイルを指定する設定ファイル。鍵ファイルは必ずここに入れる。">.gitignore</span> に登録し、<strong>履歴に含めない</strong>のが鉄則です。もし誤って公開してしまったら、そのキーは即座に無効化（再発行）してください。一度ネットに出た鍵は「もう漏れたもの」として扱います。</div>
@@ -1203,7 +1205,7 @@ fetch(api, { headers: key });</div>
       </div>
     </div>
   </section>
- 
+
   <section>
     <div class="container">
       <div class="s-label">守り ②</div>
@@ -1221,7 +1223,7 @@ fetch(api, { headers: key });</div>
       </div>
     </div>
   </section>
- 
+
   <section class="alt">
     <div class="container">
       <div class="s-label">守り ③</div>
@@ -1244,7 +1246,7 @@ fetch(api, { headers: key });</div>
       </div>
     </div>
   </section>
- 
+
   <section>
     <div class="container">
       <div class="s-label">守り ④</div>
@@ -1261,7 +1263,7 @@ fetch(api, { headers: key });</div>
       </div>
     </div>
   </section>
- 
+
   <section class="alt">
     <div class="container">
       <div class="s-label">CHECK</div>
@@ -1280,16 +1282,16 @@ fetch(api, { headers: key });</div>
       </div>
     </div>
   </section>
- 
+
   <div class="nextbar">
     <button class="nextbtn" data-goto="t6">規模と予算の話へ<span class="arr">→</span><small>タブ6：規模と予算</small></button>
   </div>
 </div>
- 
+
 <!-- ===================== TAB 6: 規模と予算 ===================== -->
 <div class="panel" id="t6">
   <div class="summary-wrap"><div class="summary"><div class="sm-ico">📊</div><div><div class="sm-title">このタブの要点</div><div class="sm-list"><span class="n">1</span><b>規模は3段階＝小（月0〜3千円）／中（1〜5万円）／大（10万円〜）</b><br><span class="n">2</span>いきなりAWSは過剰。小さく無料で始める<br><span class="n">3</span>外部AI利用料の上限設定は最初から必須</div></div></div></div>
- 
+
   <section>
     <div class="container">
       <div class="s-label">SECTION 01</div>
@@ -1334,7 +1336,7 @@ fetch(api, { headers: key });</div>
       </div>
     </div>
   </section>
- 
+
   <section class="alt">
     <div class="container">
       <div class="s-label">EXAMPLE</div>
@@ -1374,7 +1376,7 @@ fetch(api, { headers: key });</div>
       </div>
     </div>
   </section>
- 
+
   <section>
     <div class="container">
       <div class="s-label">SECTION 02</div>
@@ -1406,7 +1408,7 @@ fetch(api, { headers: key });</div>
         <div class="ct">ℹ️ 料金表記について（情報の鮮度）</div>
         <div class="cb">本ページの金額は <strong>2026年5月時点・1ドル≈150円換算の目安</strong>です（Vercel Pro 20ドル／Supabase Pro 25ドル／Railway Hobby 5ドル等を確認）。クラウド料金は変動が速いため、契約前に必ず各<strong>公式の料金ページ</strong>で最新をご確認ください。</div>
       </div>
- 
+
       <div style="margin-top:34px;" class="fade-in">
         <div style="font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:6px;display:flex;align-items:center;gap:8px;">🛡 OpenAI等の「利用上限」を設定する（課金事故の防止）</div>
         <p style="font-size:13px;color:var(--text-2);line-height:1.8;margin-bottom:16px;max-width:660px;">従量課金のAIは、設定ひとつで使いすぎを防げます。<strong>最初に上限を入れておく</strong>だけで、想定外の高額請求をほぼ回避できます。手順はサービス共通でほぼ同じです。</p>
@@ -1439,7 +1441,7 @@ fetch(api, { headers: key });</div>
       </div>
     </div>
   </section>
- 
+
   <section class="alt">
     <div class="container">
       <div class="s-label">SECTION 03</div>
@@ -1468,7 +1470,7 @@ fetch(api, { headers: key });</div>
       </div>
     </div>
   </section>
- 
+
   <section>
     <div class="container">
       <div class="s-label">SECTION 04</div>
@@ -1500,7 +1502,7 @@ fetch(api, { headers: key });</div>
       </div>
     </div>
   </section>
- 
+
   <section class="alt">
     <div class="container">
       <div class="s-label">USE CASES</div>
@@ -1554,16 +1556,16 @@ fetch(api, { headers: key });</div>
       </div>
     </div>
   </section>
- 
+
   <div class="nextbar">
     <button class="nextbtn" data-goto="t7">用語集とFAQへ<span class="arr">→</span><small>タブ7：用語集・FAQ</small></button>
   </div>
 </div>
- 
+
 <!-- ===================== TAB 7: 用語集・FAQ ===================== -->
 <div class="panel" id="t7">
   <div class="summary-wrap"><div class="summary"><div class="sm-ico">📚</div><div><div class="sm-title">このタブの要点</div><div class="sm-list"><span class="n">1</span><b>ツールの読み方・公式リンクは早見表で確認</b><br><span class="n">2</span>用語の意味とよくある疑問をまとめて解決<br><span class="n">3</span>学習ロードマップとチェックリストで次の一歩へ</div></div></div></div>
- 
+
   <section>
     <div class="container">
       <div class="s-label">QUICK LINKS</div>
@@ -1605,7 +1607,7 @@ fetch(api, { headers: key });</div>
       <div class="linknote">🔗 リンクは別タブで開きます。料金・仕様は各公式サイトの最新情報をご確認ください（本ガイドの金額は2026年5月時点の目安）。</div>
     </div>
   </section>
- 
+
   <section class="alt">
     <div class="container">
       <div class="s-label">GLOSSARY</div>
@@ -1627,7 +1629,7 @@ fetch(api, { headers: key });</div>
       </div>
     </div>
   </section>
- 
+
   <section>
     <div class="container">
       <div class="s-label">FAQ</div>
@@ -1643,7 +1645,7 @@ fetch(api, { headers: key });</div>
       </div>
     </div>
   </section>
- 
+
   <section class="alt">
     <div class="container">
       <div class="s-label">ROADMAP</div>
@@ -1657,7 +1659,7 @@ fetch(api, { headers: key });</div>
       </div>
     </div>
   </section>
- 
+
   <section>
     <div class="container">
       <div class="s-label">CHECKLIST</div>
@@ -1673,7 +1675,7 @@ fetch(api, { headers: key });</div>
         <label class="ci"><input type="checkbox"><span>作ったものをGitHubに置く流れを試した</span></label>
         <div class="prog"><div class="prog-track"><div class="prog-fill"></div></div><span class="prog-label">0 / 7 完了</span></div>
       </div>
- 
+
       <div class="callout tip fade-in" style="margin-top:30px;">
         <div class="ct">🎯 最後に — 一言まとめ</div>
         <div class="cb">
@@ -1685,23 +1687,169 @@ fetch(api, { headers: key });</div>
       </div>
     </div>
   </section>
+
+  <div class="nextbar">
+    <button class="nextbtn" data-goto="t8">AI開発ツールを比較<span class="arr">→</span><small>タブ8：AI開発ツール</small></button>
+  </div>
 </div>
- 
- 
- 
+
+<!-- ===================== TAB 8: AI開発ツール ===================== -->
+<div class="panel" id="t8">
+  <div class="summary-wrap"><div class="summary"><div class="sm-ico">🤖</div><div><div class="sm-title">このタブの要点</div><div class="sm-list"><span class="n">1</span><b>AIコーディングツールは「IDE型／ターミナル型／アプリ生成型」の3タイプ</b><br><span class="n">2</span>すでに使っている課金（ChatGPT／Claude）や使うモデルで選ぶと無駄がない<br><span class="n">3</span>料金・無料枠は変動が激しい。必ず公式で最新を確認</div></div></div></div>
+
+  <section>
+    <div class="container">
+      <div class="s-label">SECTION 01</div>
+      <div class="s-title">まず「3つのタイプ」で整理する</div>
+      <p class="s-desc">
+        AIで開発を助けるツールは数多くありますが、<strong>大きく3タイプ</strong>に分けると選びやすくなります。
+        「自分はどの使い方をしたいか」から考えるのが近道です。
+      </p>
+      <div class="grid-3">
+        <div class="card fade-in">
+          <div class="ico" style="background:var(--navy-soft);">🧩</div>
+          <h3>① IDE型（エディタ内蔵）</h3>
+          <p>コードを書くエディタの中でAIが補完・編集を手伝うタイプ。<strong>自分で書きながら</strong>支援を受けたい人向け。</p>
+          <div class="tags"><span class="tag navy">Cursor</span><span class="tag navy">Windsurf</span><span class="tag navy">GitHub Copilot</span><span class="tag navy">Antigravity</span></div>
+        </div>
+        <div class="card fade-in">
+          <div class="ico" style="background:var(--accent-soft);">⬛</div>
+          <h3>② ターミナル／エージェント型</h3>
+          <p>指示を出すと<strong>AIが自律的に</strong>ファイル編集・テスト・実行までこなすタイプ。大きめのタスクを任せたい人向け。</p>
+          <div class="tags"><span class="tag accent">Claude Code</span><span class="tag accent">Codex CLI</span><span class="tag accent">Antigravity CLI</span></div>
+        </div>
+        <div class="card fade-in">
+          <div class="ico" style="background:var(--green-soft);">✨</div>
+          <h3>③ アプリ生成型（非エンジニア向け）</h3>
+          <p>自然言語で指示すると<strong>アプリやUIを丸ごと生成</strong>するタイプ。コードを書かずに形にしたい人向け。</p>
+          <div class="tags"><span class="tag green">v0</span><span class="tag green">Bolt.new</span><span class="tag green">Lovable</span><span class="tag green">Replit</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="container">
+      <div class="s-label">SECTION 02</div>
+      <div class="s-title">注目の3ツール — 概要・強み・料金</div>
+      <p class="s-desc">いま特に注目される3つを詳しく紹介します（料金は2026年5月時点の目安。<strong>変動が激しい</strong>ため必ず公式を確認）。</p>
+      <div class="grid-3">
+        <div class="card fade-in">
+          <span class="exbadge">ターミナル型</span>
+          <h3>Claude Code</h3>
+          <div class="rd" style="margin:-4px 0 9px;">クロード・コード（Anthropic）</div>
+          <p>ターミナルに常駐し、指示に沿って<strong>自律的にファイル編集・テスト・実行</strong>まで行うエージェント。端末・web・デスクトップで使えます。複雑な複数ファイル改修やコード品質の高さに定評があります。</p>
+          <div style="margin-top:10px;">
+            <div class="exr"><b>強み</b><span>複雑なコードベースでの自律作業</span></div>
+            <div class="exr"><b>料金</b><span>Pro 月20ドル／Max 月100・200ドル（無料プランなし・API可）</span></div>
+          </div>
+          <div class="card-links"><a class="linkbtn" href="https://docs.claude.com/en/docs/claude-code/overview" target="_blank" rel="noopener">公式 <span class="ext">↗</span></a></div>
+        </div>
+        <div class="card fade-in">
+          <span class="exbadge">ターミナル＋クラウド</span>
+          <h3>Codex</h3>
+          <div class="rd" style="margin:-4px 0 9px;">コーデックス（OpenAI）</div>
+          <p>ChatGPTに統合されたコーディングエージェント。CLI・IDE拡張・クラウド実行に対応し、<strong>クラウド上で複数タスクを並行</strong>して進められます。すでにChatGPTを使っている人と相性が良いです。</p>
+          <div style="margin-top:10px;">
+            <div class="exr"><b>強み</b><span>ChatGPT課金内で使える／並列実行</span></div>
+            <div class="exr"><b>料金</b><span>ChatGPT Plus 月20ドル／Pro 月100・200ドル（無料はMini限定）</span></div>
+          </div>
+          <div class="card-links"><a class="linkbtn" href="https://developers.openai.com/codex" target="_blank" rel="noopener">公式 <span class="ext">↗</span></a></div>
+        </div>
+        <div class="card fade-in">
+          <span class="exbadge">IDE＋CLI</span>
+          <h3>Google Antigravity</h3>
+          <div class="rd" style="margin:-4px 0 9px;">グーグル・アンチグラビティ（Google）</div>
+          <p>エージェントを中心に据えたIDE。2026年5月のI/Oで<strong>2.0（デスクトップ＋CLI）</strong>が登場。Gemini 3 Proを中心に複数モデルへ対応し、<strong>内蔵ブラウザでアプリを操作して動作を自己検証</strong>できます。</p>
+          <div style="margin-top:10px;">
+            <div class="exr"><b>強み</b><span>複数エージェント並行＋ブラウザ検証／Google連携</span></div>
+            <div class="exr"><b>料金</b><span>公開プレビューは無料／Pro 月20ドル等（料金は頻繁に変更）</span></div>
+          </div>
+          <div class="card-links"><a class="linkbtn" href="https://antigravity.google" target="_blank" rel="noopener">公式 <span class="ext">↗</span></a></div>
+        </div>
+      </div>
+
+      <div style="margin-top:26px;" class="fade-in">
+        <div style="font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:12px;">📊 主要ツール比較表</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>ツール</th><th>タイプ</th><th>主な強み</th><th>料金の目安</th><th>公式</th></tr></thead>
+            <tbody>
+              <tr><td>Claude Code<span class="rd">クロード・コード</span></td><td>ターミナル型</td><td>端末常駐の自律エージェント。複数ファイルの複雑な編集に強い</td><td>Pro $20／Max $100・$200</td><td><a class="linkbtn" href="https://docs.claude.com/en/docs/claude-code/overview" target="_blank" rel="noopener">公式 <span class="ext">↗</span></a></td></tr>
+              <tr><td>Codex<span class="rd">コーデックス</span></td><td>ターミナル＋クラウド</td><td>ChatGPT統合。クラウドで並列実行（複数タスク同時）</td><td>Plus $20／Pro $100・$200</td><td><a class="linkbtn" href="https://developers.openai.com/codex" target="_blank" rel="noopener">公式 <span class="ext">↗</span></a></td></tr>
+              <tr><td>Google Antigravity<span class="rd">アンチグラビティ</span></td><td>IDE＋CLI</td><td>エージェント中心IDE。ブラウザ操作で動作を自己検証</td><td>プレビュー無料／Pro $20〜</td><td><a class="linkbtn" href="https://antigravity.google" target="_blank" rel="noopener">公式 <span class="ext">↗</span></a></td></tr>
+              <tr><td>Cursor<span class="rd">カーソル</span></td><td>IDE型</td><td>補完とエージェントのバランス。モデル選択が自由</td><td>無料／Pro $20／Pro+ $60／Ultra $200</td><td><a class="linkbtn" href="https://cursor.com" target="_blank" rel="noopener">公式 <span class="ext">↗</span></a></td></tr>
+              <tr><td>GitHub Copilot<span class="rd">ギットハブ・コパイロット</span></td><td>拡張機能</td><td>最安級。多くのエディタで動く。GitHub連携が強い</td><td>無料／Pro $10／Pro+ $39</td><td><a class="linkbtn" href="https://github.com/features/copilot" target="_blank" rel="noopener">公式 <span class="ext">↗</span></a></td></tr>
+              <tr><td>Windsurf<span class="rd">ウィンドサーフ</span></td><td>IDE型</td><td>比較的安価なエージェント型IDE</td><td>無料／Pro $15〜</td><td><a class="linkbtn" href="https://windsurf.com" target="_blank" rel="noopener">公式 <span class="ext">↗</span></a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="linknote">🔗 「公式」ボタンは別タブで開きます。料金は2026年5月時点・米ドル表記の目安です。</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="s-label">SECTION 03</div>
+      <div class="s-title">開発内容で選ぶ — 用途別おすすめ</div>
+      <p class="s-desc">「何をしたいか」が決まれば、向いているツールはほぼ絞れます。迷ったらこの対応表を参考にしてください。</p>
+      <div class="table-wrap fade-in">
+        <table>
+          <thead><tr><th>こんな目的なら</th><th>おすすめ</th><th>ひとこと</th></tr></thead>
+          <tbody>
+            <tr><td>既存コードを書きながら補完したい</td><td>GitHub Copilot / Cursor / Windsurf</td><td>エディタに常駐するIDE型が快適</td></tr>
+            <tr><td>大きめのタスクを丸ごと任せたい</td><td>Claude Code / Codex</td><td>自律エージェントが複数ファイルを処理</td></tr>
+            <tr><td>とにかく安く始めたい</td><td>GitHub Copilot（月10ドル）／各無料枠</td><td>まず無料枠やCopilotで体験</td></tr>
+            <tr><td>Google・Gemini中心／動作も自己検証したい</td><td>Google Antigravity</td><td>内蔵ブラウザでアプリを操作して確認</td></tr>
+            <tr><td>すでにChatGPTを契約している</td><td>Codex</td><td>追加課金なく使い始められる</td></tr>
+            <tr><td>すでにClaudeを契約している</td><td>Claude Code</td><td>同じ契約内で利用できる</td></tr>
+            <tr><td>非エンジニアがアプリを丸ごと作りたい</td><td>v0 / Bolt.new / Lovable / Replit</td><td>自然言語でアプリ・UIを生成</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout tip fade-in">
+        <div class="ct">💡 「どれが一番」より「自分に合うか」</div>
+        <div class="cb">どのツールも完成度が高く、優劣は<strong>使い方しだい</strong>です。まず無料枠で2〜3個を試し、自分の作業スタイル（書きながら派／任せたい派）に合うものを選ぶのが失敗しないコツです。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="container">
+      <div class="s-label">SECTION 04</div>
+      <div class="s-title">その他の注目ツール</div>
+      <p class="s-desc">上記以外にも、目的に応じて便利なツールがあります。特に<strong>非エンジニアがアプリを丸ごと作りたい</strong>場合は、③アプリ生成型が有力です。</p>
+      <div class="grid-3">
+        <div class="card fade-in"><h3>v0 <span class="rd" style="display:inline;">ブイゼロ</span></h3><p>自然言語からWebのUIを生成（Vercel製）。デザイン試作に強い。</p><div class="card-links"><a class="linkbtn" href="https://v0.app" target="_blank" rel="noopener">公式 <span class="ext">↗</span></a></div></div>
+        <div class="card fade-in"><h3>Bolt.new <span class="rd" style="display:inline;">ボルト</span></h3><p>ブラウザ上でアプリを生成・実行・公開まで。手軽な試作向き。</p><div class="card-links"><a class="linkbtn" href="https://bolt.new" target="_blank" rel="noopener">公式 <span class="ext">↗</span></a></div></div>
+        <div class="card fade-in"><h3>Lovable <span class="rd" style="display:inline;">ラバブル</span></h3><p>自然言語でWebアプリを構築。非エンジニアの定番のひとつ。</p><div class="card-links"><a class="linkbtn" href="https://lovable.dev" target="_blank" rel="noopener">公式 <span class="ext">↗</span></a></div></div>
+        <div class="card fade-in"><h3>Replit <span class="rd" style="display:inline;">レプリット</span></h3><p>ブラウザだけで開発から公開まで完結。学習・試作に便利。</p><div class="card-links"><a class="linkbtn" href="https://replit.com" target="_blank" rel="noopener">公式 <span class="ext">↗</span></a></div></div>
+        <div class="card fade-in"><h3>Devin <span class="rd" style="display:inline;">デヴィン</span></h3><p>自律型のAIソフトウェアエンジニアを掲げるエージェント。</p><div class="card-links"><a class="linkbtn" href="https://devin.ai" target="_blank" rel="noopener">公式 <span class="ext">↗</span></a></div></div>
+        <div class="card fade-in"><h3>Gemini CLI <span class="rd" style="display:inline;">ジェミニ・シーエルアイ</span></h3><p>Googleの無料CLI。現在は Antigravity CLI へ統合が進んでいます。</p><div class="card-links"><a class="linkbtn" href="https://antigravity.google" target="_blank" rel="noopener">Antigravity <span class="ext">↗</span></a></div></div>
+      </div>
+
+      <div class="callout warn fade-in">
+        <div class="ct">⚠️ 料金・プランは変わりやすい（重要）</div>
+        <div class="cb">AI開発ツールの<strong>料金・無料枠・プラン名は数か月単位で変わります</strong>（実際にこの1年で各社が複数回改定し、無料枠の縮小や課金方式の変更が相次ぎました）。本ページの金額は<strong>2026年5月時点・米ドルの目安</strong>です。契約前に必ず各公式サイトで最新情報をご確認ください。</div>
+      </div>
+    </div>
+  </section>
+</div>
+
 <footer>
   <div class="fbrand">◆ AI Labo</div>
   本ガイドはAIを使ったWeb公開・運用の学習および参照用にまとめたものです。<br>
   各サービスの仕様・料金は変更される場合があります。導入時は必ず公式情報をご確認ください。
 </footer>
 </div><!-- /app -->
- 
+
 <script>
 /* ===== TAB SWITCHING ===== */
 const tabButtons = document.querySelectorAll('.tab-btn');
 const panels = document.querySelectorAll('.panel');
 const tabwrap = document.querySelector('.tabwrap');
- 
+
 function activateTab(id){
   tabButtons.forEach(b=>b.classList.toggle('active', b.dataset.tab===id));
   panels.forEach(p=>p.classList.toggle('active', p.id===id));
@@ -1725,13 +1873,13 @@ document.addEventListener('click',e=>{
   const g=e.target.closest('[data-goto]');
   if(g) activateTab(g.dataset.goto);
 });
- 
+
 /* ===== FADE IN ===== */
 const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');io.unobserve(en.target);}});},{threshold:.08});
 function observeAll(){document.querySelectorAll('.fade-in:not(.visible)').forEach(el=>io.observe(el));}
 function revealIn(id){document.querySelectorAll('#'+id+' .fade-in').forEach(el=>el.classList.add('visible'));}
 observeAll();
- 
+
 /* ===== FAQ ACCORDION ===== */
 document.addEventListener('click',e=>{
   const q=e.target.closest('.faq-q');
@@ -1741,7 +1889,7 @@ document.addEventListener('click',e=>{
   item.closest('.faq-list').querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
   if(!open) item.classList.add('open');
 });
- 
+
 /* ===== CHECKLIST PROGRESS ===== */
 function bindChecklist(){
   document.querySelectorAll('.checklist').forEach(list=>{
@@ -1758,7 +1906,7 @@ function bindChecklist(){
     update();
   });
 }
- 
+
 /* ===== INIT FROM HASH ===== */
 bindChecklist();
 try {
@@ -1768,4 +1916,3 @@ try {
 </script>
 </body>
 </html>
- 
