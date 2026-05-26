@@ -38,8 +38,10 @@
   --maxw:1080px;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;}
 html{scroll-behavior:smooth;}
-body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased;overflow:hidden;}
+.app{height:100vh;height:100dvh;overflow-y:auto;overflow-x:hidden;position:relative;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;}
  
 /* ============ TOP BAR ============ */
 .topbar{background:var(--ink);color:#fff;}
@@ -106,6 +108,39 @@ section.alt{background:var(--paper);border-top:1px solid var(--border);border-bo
 .card h3{font-size:15.5px;font-weight:700;color:var(--ink);margin-bottom:8px;display:flex;align-items:center;gap:9px;}
 .card p{font-size:13.5px;color:var(--text-2);line-height:1.75;}
 .card .ico{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:14px;}
+ 
+/* ============ SUMMARY / STEPS / DATAFLOW ============ */
+.summary-wrap{max-width:var(--maxw);margin:0 auto;padding:36px 24px 0;}
+.summary{display:flex;gap:15px;background:var(--navy-soft);border:1px solid var(--navy-line);border-left:4px solid var(--accent);border-radius:var(--rl);padding:17px 22px;}
+.summary .sm-ico{font-size:24px;flex-shrink:0;}
+.sm-title{font-size:10.5px;font-weight:700;letter-spacing:.1em;color:var(--accent-dark);text-transform:uppercase;margin-bottom:6px;font-family:'JetBrains Mono',monospace;}
+.sm-list{font-size:13px;color:var(--text);line-height:1.95;}
+.sm-list b{color:var(--ink);font-weight:700;}
+.sm-list .n{display:inline-block;width:17px;height:17px;border-radius:50%;background:var(--accent);color:#fff;font-size:10px;font-weight:700;text-align:center;line-height:17px;margin-right:8px;font-family:'JetBrains Mono',monospace;vertical-align:middle;}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.steps.four{grid-template-columns:repeat(2,1fr);}
+@media(max-width:760px){.steps,.steps.four{grid-template-columns:1fr;}}
+.step{border:1px solid var(--border);border-radius:var(--rl);background:var(--surface);padding:20px;}
+.step .sn{width:30px;height:30px;border-radius:9px;background:var(--ink);color:#fff;font-weight:700;font-family:'JetBrains Mono',monospace;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:14px;}
+.step h4{font-size:14.5px;color:var(--ink);margin-bottom:7px;font-weight:700;}
+.step p{font-size:12.5px;color:var(--text-2);line-height:1.7;}
+.dataflow{background:var(--navy-soft);border:1px solid var(--navy-line);border-radius:var(--rl);padding:26px 22px;}
+.df-app{max-width:300px;margin:0 auto;background:var(--ink);color:#fff;border-radius:var(--r);padding:12px;text-align:center;font-weight:700;font-size:14px;}
+.df-stem{width:2px;height:20px;background:var(--navy-line);margin:6px auto;}
+.df-branches{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+@media(max-width:760px){.df-branches{grid-template-columns:1fr;}}
+.df-node{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:15px;text-align:center;}
+.df-node .dfe{font-size:24px;}
+.df-node .dft{font-size:13px;font-weight:700;color:var(--ink);margin:5px 0 3px;}
+.df-node .dfd{font-size:11.5px;color:var(--text-2);line-height:1.5;}
+.df-dest{margin-top:9px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:var(--accent-dark);background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:100px;padding:3px 10px;display:inline-block;}
+ 
+/* ============ EXAMPLE CARDS ============ */
+.exbadge{display:inline-block;font-size:11px;font-weight:700;color:var(--accent-dark);background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:100px;padding:2px 11px;margin-bottom:11px;}
+.exr{font-size:12.5px;color:var(--text-2);line-height:1.55;display:flex;gap:8px;padding:3px 0;}
+.exr b{color:var(--ink);font-weight:700;flex-shrink:0;min-width:54px;}
+.excost{margin-top:11px;padding-top:10px;border-top:1px dashed var(--border-2);font-size:12.5px;color:var(--text-2);}
+.excost b{color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:13px;}
  
 /* ============ TAGS / PILLS ============ */
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;}
@@ -248,6 +283,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
 </style>
 </head>
 <body>
+<div class="app" id="app">
  
 <!-- ===================== TOP BAR ===================== -->
 <div class="topbar">
@@ -293,6 +329,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
  
 <!-- ===================== TAB 1: 全体像 ===================== -->
 <div class="panel active" id="t1">
+  <div class="summary-wrap"><div class="summary"><div class="sm-ico">🗺</div><div><div class="sm-title">このタブの要点</div><div class="sm-list"><span class="n">1</span><b>全体は「作る→整える→公開→保管→守る→育てる」の流れ</b><br><span class="n">2</span>つまずきの元は「作る・公開・保存」3つの場所の混同<br><span class="n">3</span>まず全体像をつかみ、知りたいタブへ進めばOK</div></div></div></div>
  
   <section>
     <div class="container">
@@ -419,6 +456,38 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
     </div>
   </section>
  
+  <section>
+    <div class="container">
+      <div class="s-label">EXAMPLE</div>
+      <div class="s-title">具体例：「レシピ共有アプリ」で考えると</div>
+      <p class="s-desc">
+        3つの場所がどう組み合わさるか、身近な例で見てみましょう。
+        料理のレシピを投稿・閲覧でき、ログインして自分の投稿を管理できるアプリを想定します。
+      </p>
+      <div class="grid-3">
+        <div class="card fade-in">
+          <div class="ico" style="background:var(--navy-soft);">🛠</div>
+          <h3>作る道具 → Next.js</h3>
+          <p>投稿フォーム・レシピ一覧・マイページなど、<strong>アプリの中身</strong>を作ります。ログインやデータ連携があるので、ページ専用のAstroより Next.js が向きます。</p>
+        </div>
+        <div class="card fade-in">
+          <div class="ico" style="background:var(--green-soft);">🌐</div>
+          <h3>公開する場所 → Vercel</h3>
+          <p>完成したアプリを<strong>URLで公開</strong>します。GitHubと連携しておけば、レシピ機能を追加するたびに本番サイトへ反映できます。</p>
+        </div>
+        <div class="card fade-in">
+          <div class="ico" style="background:var(--accent-soft);">🗄</div>
+          <h3>保存する場所 → Supabase</h3>
+          <p><strong>レシピ本文・ユーザー情報・お気に入り</strong>を保存します。料理写真のような大きい画像は、別途 Cloudflare R2 に分けると費用を抑えられます。</p>
+        </div>
+      </div>
+      <div class="callout info fade-in">
+        <div class="ct">ℹ️ この組み合わせは「定番」です</div>
+        <div class="cb"><strong>Next.js（作る）＋ Vercel（公開）＋ Supabase（保存）</strong>は、多くの個人開発者やスタートアップが採用する王道の構成です。迷ったら、まずこの形を基準に考えると失敗しにくくなります。</div>
+      </div>
+    </div>
+  </section>
+ 
   <div class="nextbar">
     <button class="nextbtn" data-goto="t2">次は環境づくり<span class="arr">→</span><small>タブ2：環境とツール</small></button>
   </div>
@@ -426,6 +495,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
  
 <!-- ===================== TAB 2: 環境とツール ===================== -->
 <div class="panel" id="t2">
+  <div class="summary-wrap"><div class="summary"><div class="sm-ico">🛠</div><div><div class="sm-title">このタブの要点</div><div class="sm-list"><span class="n">1</span><b>ツールは「名前」でなく「役割」で覚えると迷わない</b><br><span class="n">2</span>目的は4つ＝保存・管理・戻せる・共有<br><span class="n">3</span>最低限は VS Code＋GitHub＋Node.js（＋ノート）</div></div></div></div>
  
   <section>
     <div class="container">
@@ -635,6 +705,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
 </div>
 <!-- ===================== TAB 3: 公開する ===================== -->
 <div class="panel" id="t3">
+  <div class="summary-wrap"><div class="summary"><div class="sm-ico">🚀</div><div><div class="sm-title">このタブの要点</div><div class="sm-list"><span class="n">1</span><b>公開は「作る→置く→公開→更新」の4ステップ</b><br><span class="n">2</span>作るもの（LP／アプリ／サーバー処理）で構成が決まる<br><span class="n">3</span>まずHTML1枚をNetlifyに置いて体験するのが近道</div></div></div></div>
  
   <section>
     <div class="container">
@@ -784,6 +855,83 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
     </div>
   </section>
  
+  <section class="alt">
+    <div class="container">
+      <div class="s-label">EXAMPLE</div>
+      <div class="s-title">公開の実例 — 3つのパターンで具体化</div>
+      <p class="s-desc">「作るもの」が決まると、構成・手順・費用がほぼ決まります。代表的な3パターンを、実際の流れに沿って示します（金額は2026年5月時点の目安）。</p>
+      <div class="grid-3">
+        <div class="card fade-in">
+          <span class="exbadge">例 ①　紹介LP</span>
+          <h3>店舗・サービスの紹介ページ</h3>
+          <div style="margin-top:10px;">
+            <div class="exr"><b>作るもの</b><span>1ページの紹介サイト（LP）</span></div>
+            <div class="exr"><b>構成</b><span>HTML ＋ Netlify（ネットリファイ）</span></div>
+            <div class="exr"><b>手順</b><span>AIにHTMLを出力 → Netlifyにドラッグ&ドロップ → URL発行</span></div>
+          </div>
+          <div class="excost">月額の目安：<b>0円</b>（独自ドメインは任意で年1千円前後）</div>
+        </div>
+        <div class="card fade-in">
+          <span class="exbadge">例 ②　AI診断ツール</span>
+          <h3>入力すると結果が出るツール</h3>
+          <div style="margin-top:10px;">
+            <div class="exr"><b>作るもの</b><span>質問に答えると診断結果を表示</span></div>
+            <div class="exr"><b>構成</b><span>Next.js ＋ Vercel（ヴァーセル）</span></div>
+            <div class="exr"><b>手順</b><span>GitHubにコードを置く → Vercelと連携 → 更新で本番へ反映</span></div>
+          </div>
+          <div class="excost">月額の目安：<b>0円</b>（個人・非商用。商用はPro 月20ドル〜）</div>
+        </div>
+        <div class="card fade-in">
+          <span class="exbadge">例 ③　会員制アプリ</span>
+          <h3>ログイン・保存があるアプリ</h3>
+          <div style="margin-top:10px;">
+            <div class="exr"><b>作るもの</b><span>登録・ログイン・データ保存つき</span></div>
+            <div class="exr"><b>構成</b><span>Next.js ＋ Supabase ＋ Vercel Pro</span></div>
+            <div class="exr"><b>手順</b><span>認証・DBを設定 → 公開 → 独自ドメイン設定（→ タブ5で安全確認）</span></div>
+          </div>
+          <div class="excost">月額の目安：<b>3万円〜</b>（規模により変動。→ タブ6）</div>
+        </div>
+      </div>
+      <div class="callout tip fade-in">
+        <div class="ct">💡 まず①から体験するのが近道</div>
+        <div class="cb">①は数分で公開できます。「作る→公開」の感覚をつかんでから②③へ進むと、つまずきが激減します。学習の順番はタブ7の「学習ロードマップ」も参考にしてください。</div>
+      </div>
+    </div>
+  </section>
+ 
+  <section>
+    <div class="container">
+      <div class="s-label">DOMAIN</div>
+      <div class="s-title">独自ドメイン取得の3ステップ</div>
+      <p class="s-desc">
+        <span class="term" data-tip="独自ドメイン：mysite.com のような自分専用のURL。サブドメイン（例：myapp.vercel.app）より信頼感が出る。">独自ドメイン</span>（例：mysite.com）は、信頼感のあるURLにしたいときに使います。
+        まずは無料のサブドメインで動作確認し、<strong>後から独自ドメインに切り替える</strong>のがおすすめです。手順は3つだけです。
+      </p>
+      <div class="steps">
+        <div class="step fade-in">
+          <div class="sn">1</div>
+          <h4>取得する</h4>
+          <p>ドメイン販売サービスで好きな名前を取得します（年 数百〜千円程度）。代表例：お名前.com、Cloudflare Registrar、Google Domains の後継など。</p>
+          <div class="card-links"><a class="linkbtn" href="https://www.cloudflare.com/products/registrar/" target="_blank" rel="noopener">Cloudflare Registrar <span class="ext">↗</span></a></div>
+        </div>
+        <div class="step fade-in">
+          <div class="sn">2</div>
+          <h4>公開サービスに向ける</h4>
+          <p>Vercel / Netlify の管理画面でドメインを追加し、表示される<span class="term" data-tip="DNS：ドメイン名を、サーバーの場所（住所）に結びつける仕組み。電話帳のような役割。">DNS</span>（ディーエヌエス）設定をドメイン側に登録します。画面の案内に沿って進めるだけです。</p>
+        </div>
+        <div class="step fade-in">
+          <div class="sn">3</div>
+          <h4>HTTPSを確認</h4>
+          <p>反映後、<span class="mono">https://</span> で表示されればOK。証明書は<strong>主要サービスが標準で用意</strong>するため、特別な作業は不要です（→ 詳細はタブ5）。</p>
+        </div>
+      </div>
+      <div class="callout tip fade-in">
+        <div class="ct">💡 反映には少し時間がかかる</div>
+        <div class="cb">DNSの変更は反映まで<strong>数分〜数時間</strong>かかることがあります。すぐ表示されなくても、設定が正しければ待てば反映されます。焦って何度も設定し直さないのがコツです。</div>
+      </div>
+    </div>
+  </section>
+ 
   <div class="nextbar">
     <button class="nextbtn" data-goto="t4">データの置き場所へ<span class="arr">→</span><small>タブ4：データ保管</small></button>
   </div>
@@ -791,6 +939,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
  
 <!-- ===================== TAB 4: データ保管 ===================== -->
 <div class="panel" id="t4">
+  <div class="summary-wrap"><div class="summary"><div class="sm-ico">🗄</div><div><div class="sm-title">このタブの要点</div><div class="sm-list"><span class="n">1</span><b>データは3種類＝静的ファイル／ユーザーデータ／メディア</b><br><span class="n">2</span>基本形は「サイト本体＝公開サービス＋データ＝Supabase」<br><span class="n">3</span>控え（バックアップ）は必ず持つ</div></div></div></div>
  
   <section>
     <div class="container">
@@ -818,6 +967,35 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
           <p>ユーザーがアップした画像・動画・PDFなど、<strong>サイズが大きい</strong>ファイル。専用の保管庫が向きます。</p>
           <div class="tags"><span class="tag green">ストレージ</span></div>
         </div>
+      </div>
+ 
+      <div style="margin-top:30px;" class="fade-in">
+        <div style="font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:8px;">🗺 サンプルアプリの「データ配置図」</div>
+        <div class="dataflow">
+          <div class="df-app">📱 あなたのアプリ（例：レシピ共有アプリ）</div>
+          <div class="df-stem"></div>
+          <div class="df-branches">
+            <div class="df-node">
+              <div class="dfe">📄</div>
+              <div class="dft">① 静的ファイル</div>
+              <div class="dfd">画面のHTML・CSS・ロゴ画像など、変わらないファイル</div>
+              <div class="df-dest">→ 公開サービス</div>
+            </div>
+            <div class="df-node">
+              <div class="dfe">👤</div>
+              <div class="dft">② ユーザーデータ</div>
+              <div class="dfd">会員情報・投稿レシピ・お気に入りなど、増えていく情報</div>
+              <div class="df-dest">→ Supabase</div>
+            </div>
+            <div class="df-node">
+              <div class="dfe">🖼</div>
+              <div class="dft">③ メディア</div>
+              <div class="dfd">投稿された料理写真など、サイズの大きいファイル</div>
+              <div class="df-dest">→ Cloudflare R2</div>
+            </div>
+          </div>
+        </div>
+        <div class="linknote">同じアプリでも、データの種類ごとに置き場所を分けるのが基本。1か所に集めないことが、費用と安全性の両面で有利になります。</div>
       </div>
     </div>
   </section>
@@ -964,6 +1142,7 @@ footer .fbrand{font-family:'Fraunces',serif;color:#fff;font-size:15px;font-weigh
  
 <!-- ===================== TAB 5: セキュリティ ===================== -->
 <div class="panel" id="t5">
+  <div class="summary-wrap"><div class="summary"><div class="sm-ico">🔐</div><div><div class="sm-title">このタブの要点</div><div class="sm-list"><span class="n">1</span><b>最重要はAPIキーを環境変数で隠すこと</b><br><span class="n">2</span>HTTPSは主要サービスで標準。認証・決済は専用サービスへ<br><span class="n">3</span>個人情報は集めすぎない・必要最小限に</div></div></div></div>
  
   <section>
     <div class="container">
@@ -1017,6 +1196,10 @@ fetch(api, { headers: key });</div>
       <div class="callout danger fade-in">
         <div class="ct">⚠️ よくある事故：GitHubにキーを上げてしまう</div>
         <div class="cb"><span class="mono">.env</span> ファイルは <span class="term" data-tip=".gitignore：Gitの管理から外したいファイルを指定する設定ファイル。鍵ファイルは必ずここに入れる。">.gitignore</span> に登録し、<strong>履歴に含めない</strong>のが鉄則です。もし誤って公開してしまったら、そのキーは即座に無効化（再発行）してください。一度ネットに出た鍵は「もう漏れたもの」として扱います。</div>
+      </div>
+      <div class="callout info fade-in">
+        <div class="ct">📎 ありがちなシナリオ</div>
+        <div class="cb">「動いたから」と OpenAI のキーを直書きしたまま GitHub で公開 → <strong>数時間後に身に覚えのない高額請求</strong>、というケースは実際に多く報告されています。公開リポジトリの鍵は探索プログラムに数分で拾われる前提で、<strong>最初から環境変数に入れる</strong>のが安全です。</div>
       </div>
     </div>
   </section>
@@ -1105,6 +1288,7 @@ fetch(api, { headers: key });</div>
  
 <!-- ===================== TAB 6: 規模と予算 ===================== -->
 <div class="panel" id="t6">
+  <div class="summary-wrap"><div class="summary"><div class="sm-ico">📊</div><div><div class="sm-title">このタブの要点</div><div class="sm-list"><span class="n">1</span><b>規模は3段階＝小（月0〜3千円）／中（1〜5万円）／大（10万円〜）</b><br><span class="n">2</span>いきなりAWSは過剰。小さく無料で始める<br><span class="n">3</span>外部AI利用料の上限設定は最初から必須</div></div></div></div>
  
   <section>
     <div class="container">
@@ -1153,6 +1337,46 @@ fetch(api, { headers: key });</div>
  
   <section class="alt">
     <div class="container">
+      <div class="s-label">EXAMPLE</div>
+      <div class="s-title">規模別のプロジェクト例</div>
+      <p class="s-desc">自分のプロジェクトがどの段階に近いか、イメージしやすいよう代表的な例を挙げます（あくまで一例で、実際は内容により変動します）。</p>
+      <div class="grid-3">
+        <div class="card fade-in">
+          <span class="exbadge">小規模の例</span>
+          <h3>店舗の予約受付LP</h3>
+          <div style="margin-top:10px;">
+            <div class="exr"><b>内容</b><span>営業案内＋予約フォームの1ページ</span></div>
+            <div class="exr"><b>構成</b><span>HTML（またはAstro）＋ Netlify</span></div>
+            <div class="exr"><b>運用</b><span>オーナーや担当者が一人で更新</span></div>
+          </div>
+          <div class="excost">月額の目安：<b>0〜3千円</b></div>
+        </div>
+        <div class="card fade-in">
+          <span class="exbadge">中規模の例</span>
+          <h3>オンライン講座の会員制サイト</h3>
+          <div style="margin-top:10px;">
+            <div class="exr"><b>内容</b><span>会員登録・ログイン・教材の閲覧管理</span></div>
+            <div class="exr"><b>構成</b><span>Next.js ＋ Supabase ＋ Vercel Pro</span></div>
+            <div class="exr"><b>運用</b><span>担当者2〜3名で更新・サポート</span></div>
+          </div>
+          <div class="excost">月額の目安：<b>3〜5万円</b></div>
+        </div>
+        <div class="card fade-in">
+          <span class="exbadge">大規模の例</span>
+          <h3>全国展開の予約・在庫アプリ</h3>
+          <div style="margin-top:10px;">
+            <div class="exr"><b>内容</b><span>多数の利用者・高負荷・止められない運用</span></div>
+            <div class="exr"><b>構成</b><span>AWS（EC2 / RDS / S3 / CloudFront 等）</span></div>
+            <div class="exr"><b>運用</b><span>専任の開発・運用チーム or 外注</span></div>
+          </div>
+          <div class="excost">月額の目安：<b>10万円〜</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section>
+    <div class="container">
       <div class="s-label">SECTION 02</div>
       <div class="s-title">予算早見表 — 項目ごとの目安</div>
       <p class="s-desc">費用は「項目の積み上げ」で考えると見通せます。あくまで<strong>目安</strong>であり、利用量によって変動します。</p>
@@ -1182,10 +1406,41 @@ fetch(api, { headers: key });</div>
         <div class="ct">ℹ️ 料金表記について（情報の鮮度）</div>
         <div class="cb">本ページの金額は <strong>2026年5月時点・1ドル≈150円換算の目安</strong>です（Vercel Pro 20ドル／Supabase Pro 25ドル／Railway Hobby 5ドル等を確認）。クラウド料金は変動が速いため、契約前に必ず各<strong>公式の料金ページ</strong>で最新をご確認ください。</div>
       </div>
+ 
+      <div style="margin-top:34px;" class="fade-in">
+        <div style="font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:6px;display:flex;align-items:center;gap:8px;">🛡 OpenAI等の「利用上限」を設定する（課金事故の防止）</div>
+        <p style="font-size:13px;color:var(--text-2);line-height:1.8;margin-bottom:16px;max-width:660px;">従量課金のAIは、設定ひとつで使いすぎを防げます。<strong>最初に上限を入れておく</strong>だけで、想定外の高額請求をほぼ回避できます。手順はサービス共通でほぼ同じです。</p>
+        <div class="steps four">
+          <div class="step">
+            <div class="sn">1</div>
+            <h4>請求設定を開く</h4>
+            <p>管理画面の「Billing（請求）」→「Limits（上限）」を開きます。</p>
+          </div>
+          <div class="step">
+            <div class="sn">2</div>
+            <h4>上限額を決める</h4>
+            <p>月に使ってよい<strong>上限金額（ハードリミット）</strong>を設定。例：月50ドルなど無理のない額に。</p>
+          </div>
+          <div class="step">
+            <div class="sn">3</div>
+            <h4>通知を入れる</h4>
+            <p>上限の手前で<strong>メール通知</strong>が届くよう設定（例：8割で警告）。</p>
+          </div>
+          <div class="step">
+            <div class="sn">4</div>
+            <h4>キーを分ける</h4>
+            <p>用途ごとにAPIキーを分け、不要になったキーは<strong>すぐ無効化</strong>します。</p>
+          </div>
+        </div>
+        <div class="callout warn" style="margin-top:18px;">
+          <div class="ct">⚠️ 「上限なし」が最大のリスク</div>
+          <div class="cb">上限を設定していないと、キーが漏れた場合や処理が暴走した場合に<strong>青天井で課金</strong>されます。金額の正確な画面項目は変わることがあるため、各サービスの公式ヘルプもあわせて確認してください。</div>
+        </div>
+      </div>
     </div>
   </section>
  
-  <section>
+  <section class="alt">
     <div class="container">
       <div class="s-label">SECTION 03</div>
       <div class="s-title">AWS の概要 — 「育ったら」検討する選択肢</div>
@@ -1214,7 +1469,7 @@ fetch(api, { headers: key });</div>
     </div>
   </section>
  
-  <section class="alt">
+  <section>
     <div class="container">
       <div class="s-label">SECTION 04</div>
       <div class="s-title">いつステップアップすべきか</div>
@@ -1246,6 +1501,60 @@ fetch(api, { headers: key });</div>
     </div>
   </section>
  
+  <section class="alt">
+    <div class="container">
+      <div class="s-label">USE CASES</div>
+      <div class="s-title">業種別ミニ事例 — 「自社ならこうなる」</div>
+      <p class="s-desc">業種ごとに、よくある構成・規模・予算の目安を示します。自分の事業に近いものを起点に考えると、必要なものが見えてきます（いずれも代表的な一例で、要件により変動します）。</p>
+      <div class="grid-2">
+        <div class="card fade-in">
+          <span class="exbadge">🍴 飲食店</span>
+          <h3>予約受付・メニュー紹介</h3>
+          <div style="margin-top:10px;">
+            <div class="exr"><b>作るもの</b><span>営業案内＋メニュー＋予約フォームのLP</span></div>
+            <div class="exr"><b>構成</b><span>HTML / Astro ＋ Netlify</span></div>
+            <div class="exr"><b>規模</b><span>小規模・担当者ひとりで更新</span></div>
+          </div>
+          <div class="excost">月額の目安：<b>0〜3千円</b></div>
+        </div>
+        <div class="card fade-in">
+          <span class="exbadge">🎓 教育・スクール</span>
+          <h3>オンライン講座の会員サイト</h3>
+          <div style="margin-top:10px;">
+            <div class="exr"><b>作るもの</b><span>会員登録・ログイン・教材の閲覧管理</span></div>
+            <div class="exr"><b>構成</b><span>Next.js ＋ Supabase ＋ Vercel Pro</span></div>
+            <div class="exr"><b>規模</b><span>中規模・運営2〜3名</span></div>
+          </div>
+          <div class="excost">月額の目安：<b>3〜5万円</b></div>
+        </div>
+        <div class="card fade-in">
+          <span class="exbadge">🛒 EC・物販</span>
+          <h3>小さなネットショップ</h3>
+          <div style="margin-top:10px;">
+            <div class="exr"><b>作るもの</b><span>商品掲載・カート・決済</span></div>
+            <div class="exr"><b>構成</b><span>Next.js ＋ Stripe（決済）＋ Supabase</span></div>
+            <div class="exr"><b>規模</b><span>中規模・決済は専用サービスに委任</span></div>
+          </div>
+          <div class="excost">月額の目安：<b>3万円〜</b>（＋決済手数料）</div>
+        </div>
+        <div class="card fade-in">
+          <span class="exbadge">🧑‍💼 士業・コンサル</span>
+          <h3>問い合わせLP＋資料ダウンロード</h3>
+          <div style="margin-top:10px;">
+            <div class="exr"><b>作るもの</b><span>サービス紹介＋問い合わせ＋資料DL</span></div>
+            <div class="exr"><b>構成</b><span>Astro ＋ Netlify ＋ フォーム連携</span></div>
+            <div class="exr"><b>規模</b><span>小規模・本人で運用</span></div>
+          </div>
+          <div class="excost">月額の目安：<b>0〜3千円</b></div>
+        </div>
+      </div>
+      <div class="callout tip fade-in">
+        <div class="ct">💡 共通する考え方</div>
+        <div class="cb">「紹介・問い合わせが中心」なら小規模（無料〜）で十分。「ログイン・データ保存・決済」が入ると中規模（月数万円）へ。<strong>機能が増えたぶんだけ規模と予算が上がる</strong>——この対応関係さえ押さえれば、見積もりの精度が上がります。</div>
+      </div>
+    </div>
+  </section>
+ 
   <div class="nextbar">
     <button class="nextbtn" data-goto="t7">用語集とFAQへ<span class="arr">→</span><small>タブ7：用語集・FAQ</small></button>
   </div>
@@ -1253,6 +1562,7 @@ fetch(api, { headers: key });</div>
  
 <!-- ===================== TAB 7: 用語集・FAQ ===================== -->
 <div class="panel" id="t7">
+  <div class="summary-wrap"><div class="summary"><div class="sm-ico">📚</div><div><div class="sm-title">このタブの要点</div><div class="sm-list"><span class="n">1</span><b>ツールの読み方・公式リンクは早見表で確認</b><br><span class="n">2</span>用語の意味とよくある疑問をまとめて解決<br><span class="n">3</span>学習ロードマップとチェックリストで次の一歩へ</div></div></div></div>
  
   <section>
     <div class="container">
@@ -1384,6 +1694,7 @@ fetch(api, { headers: key });</div>
   本ガイドはAIを使ったWeb公開・運用の学習および参照用にまとめたものです。<br>
   各サービスの仕様・料金は変更される場合があります。導入時は必ず公式情報をご確認ください。
 </footer>
+</div><!-- /app -->
  
 <script>
 /* ===== TAB SWITCHING ===== */
@@ -1401,8 +1712,12 @@ function activateTab(id){
     const target = activeBtn.offsetLeft - (bar.clientWidth - activeBtn.clientWidth)/2;
     bar.scrollTo({left: Math.max(0, target), behavior:'smooth'});
   }
+  const app = document.getElementById('app');
   const top = tabwrap.offsetTop;
-  requestAnimationFrame(()=>window.scrollTo({top: top, behavior:'smooth'}));
+  requestAnimationFrame(()=>{
+    if(app){ app.scrollTo({top: top, behavior:'smooth'}); }
+    try { window.scrollTo({top: top, behavior:'smooth'}); } catch(e){}
+  });
   try { history.replaceState(null,'','#'+id); } catch(e){ /* sandboxed iframe: ignore */ }
 }
 tabButtons.forEach(b=>b.addEventListener('click',()=>activateTab(b.dataset.tab)));
@@ -1453,3 +1768,4 @@ try {
 </script>
 </body>
 </html>
+ 
