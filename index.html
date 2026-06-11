@@ -190,6 +190,77 @@ tbody td:first-child{font-family:'JetBrains Mono',monospace;font-size:12px;font-
 .a-note strong{color:#78350f}
 .legend{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:12px;padding:8px 14px;background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);font-size:12px;color:var(--ts)}
 
+/* ANALOGY CARDS (C) */
+.analogy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:720px){.analogy-grid{grid-template-columns:1fr}}
+.analogy-c{border:1px solid var(--bd);border-radius:var(--rl);padding:20px 18px;background:var(--sf);text-align:center;position:relative;overflow:hidden;transition:box-shadow .2s,transform .2s}
+.analogy-c:hover{box-shadow:var(--sh);transform:translateY(-2px)}
+.analogy-c::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.analogy-c.codex::before{background:var(--ac)}
+.analogy-c.claude::before{background:var(--or)}
+.analogy-c.google::before{background:var(--tl)}
+.analogy-emoji{font-size:40px;margin-bottom:10px;line-height:1}
+.analogy-tool{font-size:13px;font-weight:700;margin-bottom:3px}
+.analogy-as{font-size:17px;font-weight:800;margin-bottom:10px;font-family:'DM Serif Display',serif}
+.analogy-c.codex .analogy-as{color:var(--ac)}
+.analogy-c.claude .analogy-as{color:var(--or)}
+.analogy-c.google .analogy-as{color:var(--tl)}
+.analogy-desc{font-size:12.5px;color:var(--ts);line-height:1.7}
+
+/* DETAIL CARDS (A) */
+.detail-card{border:1px solid var(--bd);border-radius:var(--rl);overflow:hidden;background:var(--sf);margin-bottom:16px}
+.detail-head{padding:18px 20px;display:flex;align-items:center;gap:14px;border-bottom:1px solid var(--bl)}
+.detail-head.codex{background:linear-gradient(to right,var(--al),transparent)}
+.detail-head.claude{background:linear-gradient(to right,var(--ol),transparent)}
+.detail-head.google{background:linear-gradient(to right,var(--tll),transparent)}
+.detail-emoji{font-size:32px;flex-shrink:0}
+.detail-titles{flex:1}
+.detail-prov{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;margin-bottom:2px}
+.detail-prov.codex{color:var(--ac)}.detail-prov.claude{color:var(--or)}.detail-prov.google{color:var(--tl)}
+.detail-name{font-size:18px;font-weight:700}
+.detail-badge{font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;flex-shrink:0}
+.detail-badge.codex{background:var(--al);color:var(--ad)}
+.detail-badge.claude{background:var(--ol);color:var(--or)}
+.detail-badge.google{background:var(--tll);color:var(--tl)}
+.detail-body{padding:18px 20px}
+.detail-block{margin-bottom:16px}
+.detail-block:last-child{margin-bottom:0}
+.detail-q{font-size:13px;font-weight:700;color:var(--tp);margin-bottom:6px;display:flex;align-items:center;gap:7px}
+.detail-q-icon{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.detail-q-icon.codex{background:var(--al)}.detail-q-icon.claude{background:var(--ol)}.detail-q-icon.google{background:var(--tll)}
+.detail-a{font-size:13px;color:var(--ts);line-height:1.8;padding-left:29px}
+.detail-a strong{color:var(--tp);font-weight:600}
+.detail-ex{background:var(--bg);border-radius:var(--r);padding:11px 14px;margin-top:7px;margin-left:29px;font-size:12.5px;color:var(--ts);line-height:1.7;border-left:3px solid var(--bd)}
+.detail-ex-label{font-size:11px;font-weight:700;color:var(--tm);margin-bottom:3px}
+.detail-fit{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px;padding-left:29px}
+
+/* EXPANDABLE TABLE ROWS (B) */
+.cmp-row-head{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:0;background:var(--tp);color:white;border-radius:var(--rl) var(--rl) 0 0;overflow:hidden}
+.cmp-row-head>div{padding:12px 14px;font-size:11.5px;font-weight:700;letter-spacing:.04em}
+.cmp-row-head>div:not(:first-child){text-align:center;border-left:1px solid rgba(255,255,255,.12)}
+.cmp-rows{border:1px solid var(--bd);border-top:none;border-radius:0 0 var(--rl) var(--rl);overflow:hidden;background:var(--sf)}
+.cmp-row{border-top:1px solid var(--bl)}
+.cmp-row:first-child{border-top:none}
+.cmp-row-main{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:0;cursor:pointer;transition:background .15s;align-items:center}
+.cmp-row-main:hover{background:#faf9f7}
+.cmp-row-main>div{padding:12px 14px;font-size:12.5px}
+.cmp-row-main>div:not(.cmp-label){text-align:center;color:var(--ts);border-left:1px solid var(--bl)}
+.cmp-label{font-weight:600;color:var(--tp);display:flex;align-items:center;gap:7px}
+.cmp-chev{font-size:9px;color:var(--tm);transition:transform .25s;flex-shrink:0}
+.cmp-row.open .cmp-chev{transform:rotate(180deg)}
+.cmp-mark-ex{color:var(--gn);font-weight:700}
+.cmp-mark-ok{color:var(--ac);font-weight:700}
+.cmp-mark-lt{color:var(--or);font-weight:700}
+.cmp-detail{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;padding:0 14px;background:var(--bg);font-size:12.5px;color:var(--ts);line-height:1.8}
+.cmp-row.open .cmp-detail{max-height:200px;padding:13px 14px;border-top:1px dashed var(--bd)}
+.cmp-detail strong{color:var(--tp);font-weight:600}
+.cmp-tap-hint{font-size:12px;color:var(--ac);background:var(--al);border:1px solid #bfdbfe;border-radius:100px;padding:5px 14px;display:inline-flex;align-items:center;gap:6px;margin-bottom:12px;font-weight:600}
+@media(max-width:560px){
+  .cmp-row-head,.cmp-row-main{grid-template-columns:1.3fr 1fr 1fr 1fr}
+  .cmp-row-head>div,.cmp-row-main>div{padding:9px 7px;font-size:11px}
+  .analogy-as{font-size:15px}
+}
+
 /* GLOSSARY */
 .gl-card{border:1px solid var(--bd);border-radius:var(--rl);padding:14px 16px;background:var(--sf);transition:box-shadow .15s}
 .gl-card:hover{box-shadow:0 1px 3px rgba(0,0,0,.06)}
@@ -515,38 +586,250 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--tm);border-top:
 <!-- ================================================================ TAB 4 ================================================================ -->
 <div class="tab-panel" id="t4">
 <div class="sec"><div class="container">
-  <div class="sl">STEP 07 — 2026年6月時点</div><div class="st">AI<span class="term" data-tip="コーディングエージェント：コードを書く・直す・テストするなど開発作業をAIが代行するツール。">コーディングエージェント</span> — 3つを比較する</div>
-  <p class="sd"><strong>できることは9割同じ。</strong>違いは「使い心地・得意な環境・料金体系・モデルの性格」です。</p>
-  <div class="av fade-in"><div class="av-label">結論</div><div class="av-items"><div class="av-i"><span>迷ったら・初心者</span><small>→Codex</small></div><div class="av-i"><span>ターミナル派</span><small>→Claude Code</small></div><div class="av-i"><span>Web/UI検証</span><small>→Antigravity</small></div></div></div>
-  <div class="g3 fade-in">
-    <div class="agent-card"><div class="abar codex"></div><div class="a-head"><div class="a-prov codex">OpenAI</div><div class="a-name">Codex（コーデックス）</div><div class="a-tag">ChatGPT感覚で使える。UI・連携・管理まで幅広い</div></div><div class="a-body"><div class="a-st">強み</div><ul class="a-sl"><li><span class="si">✓</span>ChatGPTと同じアカウントで使える</li><li><span class="si">✓</span>Free〜Plusから手軽に始められる</li><li><span class="si">✓</span>アプリ・CLI・IDE・Webと多様</li><li><span class="si">✓</span>GitHub <span class="term" data-tip="PRレビュー：コードの変更提案を確認・修正する作業。">PRレビュー</span>に対応</li><li><span class="si">✓</span><span class="term" data-tip="サンドボックス：安全な仮想環境内でAIを動かし、実際のシステムを壊さない仕組み。">サンドボックス</span>＋承認で安全</li></ul></div><div class="a-foot"><span class="a-price">$0/$8/$20/$100〜</span><span class="a-best">初心者向け</span></div></div>
-    <div class="agent-card"><div class="abar claude"></div><div class="a-head"><div class="a-prov claude">Anthropic</div><div class="a-name">Claude Code（クロード コード）</div><div class="a-tag">ターミナル中心。長文・大規模コード読解に強い</div></div><div class="a-body"><div class="a-st">強み</div><ul class="a-sl"><li><span class="si">✓</span><span class="term" data-tip="ターミナル：文字でコマンドを入力してPCを操作する画面。">ターミナル</span>から自然に使える</li><li><span class="si">✓</span>200K〜1Mの大<span class="term" data-tip="コンテキスト：AIが一度に処理できる文章・コードの量。大きいほど長文を一括処理できる。">コンテキスト</span></li><li><span class="si">✓</span>設計相談・長文仕様書が得意</li><li><span class="si">✓</span>Git操作・CI/CD連携がスムーズ</li><li><span class="si">✓</span>Claudeの推論力をフル活用</li></ul></div><div class="a-foot"><span class="a-price">$20/$100/$200</span><span class="a-best">ターミナル派向け</span></div></div>
-    <div class="agent-card"><div class="abar google"></div><div class="a-head"><div class="a-prov google">Google</div><div class="a-name">Antigravity（アンチグラビティ）</div><div class="a-tag">複数エージェントを管理。ブラウザ検証・成果物確認まで</div></div><div class="a-body"><div class="a-st">強み</div><ul class="a-sl"><li><span class="si">✓</span>ブラウザ操作・スクショで検証</li><li><span class="si">✓</span>複数エージェントの並列管理</li><li><span class="si">✓</span><span class="term" data-tip="Artifacts：AIが作業した成果物（計画書・コード差分・スクショ・録画）のこと。">Artifacts</span>で成果が見える</li><li><span class="si">✓</span>Firebase・Android連携が深い</li><li><span class="si">✓</span>2.0はデスクトップアプリとして独立</li></ul></div><div class="a-foot"><span class="a-price">$20/$100/$200</span><span class="a-best">Web/UI・Google系向け</span></div></div>
+  <div class="sl">STEP 07 — 2026年6月時点</div><div class="st">AI<span class="term" data-tip="コーディングエージェント：コードを書く・直す・テストするなど開発作業をAIが代行するツール。">コーディングエージェント</span> — 3つを徹底比較</div>
+  <p class="sd">Codex・Claude Code・Antigravityはどれも「AIにコードを書いてもらう道具」です。<strong>できることは9割同じ。</strong>でも「性格」が違います。まずはたとえ話で、その違いを直感的につかみましょう。</p>
+
+  <!-- ===== C: たとえ話 ===== -->
+  <div class="analogy-grid fade-in">
+    <div class="analogy-c codex">
+      <div class="analogy-emoji">🚗</div>
+      <div class="analogy-tool">Codex（コーデックス）</div>
+      <div class="analogy-as">おまかせ運転車</div>
+      <div class="analogy-desc">行き先を告げれば、あとはおまかせ。運転に詳しくなくても目的地に着ける。「とにかく簡単に始めたい人」向けの最初の一台。</div>
+    </div>
+    <div class="analogy-c claude">
+      <div class="analogy-emoji">🏎️</div>
+      <div class="analogy-tool">Claude Code（クロード コード）</div>
+      <div class="analogy-as">マニュアル車の名機</div>
+      <div class="analogy-desc">運転技術がある人が乗ると本領発揮。細かい操作ができ、長距離（大規模なコード）も快適。「運転（ターミナル）に慣れた人」向け。</div>
+    </div>
+    <div class="analogy-c google">
+      <div class="analogy-emoji">🎛️</div>
+      <div class="analogy-tool">Antigravity（アンチグラビティ）</div>
+      <div class="analogy-as">複数ロボットの司令塔</div>
+      <div class="analogy-desc">何台ものロボット（エージェント）に同時に指示を出し、作業を見守る管制室。「たくさんの作業をまとめて任せたい人」向け。</div>
+    </div>
   </div>
-  <div class="link-btns fade-in" style="margin-top:16px">
-    <a href="https://openai.com/index/introducing-codex/" target="_blank" rel="noopener" class="link-btn"><span class="lb-icon">🔗</span>Codex（OpenAI）</a>
-    <a href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank" rel="noopener" class="link-btn"><span class="lb-icon">🔗</span>Claude Code</a>
-    <a href="https://antigravity.google" target="_blank" rel="noopener" class="link-btn"><span class="lb-icon">🔗</span>Google Antigravity</a>
+
+  <div style="margin-top:14px;padding:12px 16px;background:var(--sf);border:1px solid var(--bd);border-radius:var(--rl);border-left:4px solid var(--ac);font-size:13px;color:var(--ts);line-height:1.8;" class="fade-in">
+    💡 <strong>ひとことで言うと：</strong>「迷ったらおまかせ運転（Codex）」「運転が好きなら名機（Claude Code）」「大勢を動かしたいなら司令塔（Antigravity）」。次のカードで、それぞれをもっと詳しく見ていきます。
   </div>
 </div></div>
 
+<!-- ===== A: 詳細解説カード ===== -->
 <div class="sec sec-alt"><div class="container">
-  <div class="sl">詳細比較</div><div class="st">数字と機能で細かく見る</div>
-  <div class="legend fade-in"><span><strong style="color:var(--gn)">◎</strong> 特に強い</span><span><strong style="color:var(--ac)">○</strong> 対応</span><span><strong style="color:var(--or)">△</strong> 弱い</span></div>
-  <div class="tw fade-in" style="margin-bottom:24px">
-    <table><thead><tr><th>機能</th><th>Codex</th><th>Claude Code</th><th>Antigravity</th></tr></thead>
-    <tbody>
-      <tr><td>コード生成・バグ修正</td><td>◎</td><td>◎</td><td>◎</td></tr>
-      <tr><td>コードレビュー</td><td>GitHub PR対応</td><td>CI/CD連携</td><td>成果物確認が強い</td></tr>
-      <tr><td>ターミナル操作</td><td>○</td><td>◎ 特に強い</td><td>○ CLIあり</td></tr>
-      <tr><td>ブラウザ検証</td><td>○</td><td>○</td><td>◎ 特に強い</td></tr>
-      <tr><td>複数エージェント</td><td>○</td><td>○</td><td>◎ 中心機能</td></tr>
-      <tr><td>Google Cloud連携</td><td>△</td><td>△</td><td>◎ 最も強い</td></tr>
-      <tr><td>初心者の入りやすさ</td><td>◎ 高い</td><td>○ 開発者向き</td><td>○ 慣れると強い</td></tr>
-    </tbody></table>
+  <div class="sl">DETAIL</div><div class="st">1つずつ、じっくり理解する</div>
+  <p class="sd">「これは何？」「たとえると？」「何ができる？」「こんな人向け」を順番に解説します。</p>
+
+  <!-- Codex 詳細 -->
+  <div class="detail-card fade-in">
+    <div class="detail-head codex">
+      <div class="detail-emoji">🚗</div>
+      <div class="detail-titles">
+        <div class="detail-prov codex">OpenAI（オープンエーアイ）が開発</div>
+        <div class="detail-name">Codex（コーデックス）</div>
+      </div>
+      <div class="detail-badge codex">初心者おすすめ</div>
+    </div>
+    <div class="detail-body">
+      <div class="detail-block">
+        <div class="detail-q"><span class="detail-q-icon codex">❓</span>これは何？</div>
+        <div class="detail-a">ChatGPTを作っている<strong>OpenAI社のAIコーディングエージェント</strong>です。「このアプリ作って」「このエラー直して」と話しかけるだけで、AIがコードを書いたり修正したりしてくれます。<strong>ChatGPTの有料プランに含まれている</strong>ため、すでにChatGPTを使っている人はそのまま使い始められます。</div>
+      </div>
+      <div class="detail-block">
+        <div class="detail-q"><span class="detail-q-icon codex">🚗</span>たとえると？</div>
+        <div class="detail-a"><strong>おまかせ運転の車</strong>です。「○○へ行って」と告げれば、運転の知識がなくても目的地に到着します。専門知識がなくても、お願いするだけで形になるのが最大の魅力です。</div>
+      </div>
+      <div class="detail-block">
+        <div class="detail-q"><span class="detail-q-icon codex">🛠️</span>何ができる？</div>
+        <div class="detail-a">コードを書く・バグを直す・テストする・<span class="term" data-tip="GitHub：コードを保存・共有するクラウドサービス。">GitHub</span>でのコードチェックを手伝う、など開発作業全般。アプリ・<span class="term" data-tip="CLI：文字でコマンドを打ってPCを操作する画面（ターミナル）のこと。">CLI</span>・<span class="term" data-tip="IDE：コードを書くための高機能なエディタ（VS Codeなど）。">IDE</span>・Webブラウザなど、使える場所が多いのも特徴です。</div>
+      </div>
+      <div class="detail-block">
+        <div class="detail-q"><span class="detail-q-icon codex">👤</span>こんな人向け</div>
+        <div class="detail-fit">
+          <span class="tag b">プログラミング初挑戦の人</span>
+          <span class="tag b">ChatGPTを普段使う人</span>
+          <span class="tag b">画面で見ながら進めたい人</span>
+        </div>
+        <div class="detail-ex">
+          <div class="detail-ex-label">具体的な使用例</div>
+          「料金シミュレーターを作って」とお願い → Codexがコードを生成 → 「ボタンの色を青にして」と追加注文 → 完成したらそのまま公開。会話するだけで開発が進みます。
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="sl" style="margin-bottom:8px;">料金（2026年6月時点・1ドル≒155円）</div>
-  <div class="tw fade-in" style="margin-bottom:20px">
+
+  <!-- Claude Code 詳細 -->
+  <div class="detail-card fade-in">
+    <div class="detail-head claude">
+      <div class="detail-emoji">🏎️</div>
+      <div class="detail-titles">
+        <div class="detail-prov claude">Anthropic（アンソロピック）が開発</div>
+        <div class="detail-name">Claude Code（クロード コード）</div>
+      </div>
+      <div class="detail-badge claude">開発者向け</div>
+    </div>
+    <div class="detail-body">
+      <div class="detail-block">
+        <div class="detail-q"><span class="detail-q-icon claude">❓</span>これは何？</div>
+        <div class="detail-a">AIアシスタント「Claude」を作っている<strong>Anthropic社のコーディングエージェント</strong>です。<span class="term" data-tip="ターミナル：文字でコマンドを入力してPCを操作する黒い画面。">ターミナル</span>（文字でPCを操作する画面）を中心に使う設計で、<strong>長い文章や大きなコードをまとめて理解する力</strong>に優れています。</div>
+      </div>
+      <div class="detail-block">
+        <div class="detail-q"><span class="detail-q-icon claude">🏎️</span>たとえると？</div>
+        <div class="detail-a"><strong>マニュアル車の名機</strong>です。運転（ターミナル操作）に慣れた人が乗ると本領を発揮します。おまかせ運転ほど手軽ではありませんが、細かい制御ができ、長距離（大規模開発）でも疲れにくい一台です。</div>
+      </div>
+      <div class="detail-block">
+        <div class="detail-q"><span class="detail-q-icon claude">🛠️</span>何ができる？</div>
+        <div class="detail-a">コード作成・修正に加え、<strong>大量のコードや長い仕様書を一度に読み込んで理解</strong>できます。<span class="term" data-tip="コンテキスト：AIが一度に処理できる文章・コードの量。大きいほど長い資料を一括で渡せる。">コンテキスト</span>（一度に扱える情報量）が非常に大きく、「この巨大なプログラム全体を見て、設計を相談したい」といった用途で力を発揮します。</div>
+      </div>
+      <div class="detail-block">
+        <div class="detail-q"><span class="detail-q-icon claude">👤</span>こんな人向け</div>
+        <div class="detail-fit">
+          <span class="tag o">ターミナル操作に慣れた人</span>
+          <span class="tag o">大きなコードを扱う人</span>
+          <span class="tag o">設計を相談したい人</span>
+        </div>
+        <div class="detail-ex">
+          <div class="detail-ex-label">具体的な使用例</div>
+          「この100ファイルあるプログラム全体を読んで、バグの原因を探して」とターミナルから依頼 → Claude Codeが全体を理解して原因を特定 → 修正案まで提示。大規模な作業ほど真価を発揮します。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Antigravity 詳細 -->
+  <div class="detail-card fade-in">
+    <div class="detail-head google">
+      <div class="detail-emoji">🎛️</div>
+      <div class="detail-titles">
+        <div class="detail-prov google">Google（グーグル）が開発</div>
+        <div class="detail-name">Google Antigravity（アンチグラビティ）</div>
+      </div>
+      <div class="detail-badge google">Web開発向け</div>
+    </div>
+    <div class="detail-body">
+      <div class="detail-block">
+        <div class="detail-q"><span class="detail-q-icon google">❓</span>これは何？</div>
+        <div class="detail-a">Googleが開発した<strong>「エージェントファースト」</strong>（AIエージェントを主役にした）開発プラットフォームです。1つのAIに頼むのではなく、<strong>複数のAIエージェントに同時に作業させて管理する</strong>のが特徴。コードを書くだけでなく、ブラウザを開いて動作確認まで行います。</div>
+      </div>
+      <div class="detail-block">
+        <div class="detail-q"><span class="detail-q-icon google">🎛️</span>たとえると？</div>
+        <div class="detail-a"><strong>複数ロボットの司令塔（管制室）</strong>です。何台ものロボットに同時に指示を出し、それぞれの作業の様子を画面で見守れます。「画面を作って、ブラウザで表示確認して、崩れてたら直して」という一連の流れをまとめて任せられます。</div>
+      </div>
+      <div class="detail-block">
+        <div class="detail-q"><span class="detail-q-icon google">🛠️</span>何ができる？</div>
+        <div class="detail-a">複数AIの並列作業の管理に加え、<strong>ブラウザを操作して実際の見た目を確認</strong>できます。作業結果を<span class="term" data-tip="Artifacts：AIが作った成果物（作業計画・スクリーンショット・操作の録画など）。文章のログだけでなく「目に見える形」で確認できる。">Artifacts</span>（計画書・スクリーンショット・操作の録画）として残すため、「AIが何をやったか」が目で見て分かります。Firebase・AndroidなどGoogleのサービスとの連携も強力です。</div>
+      </div>
+      <div class="detail-block">
+        <div class="detail-q"><span class="detail-q-icon google">👤</span>こんな人向け</div>
+        <div class="detail-fit">
+          <span class="tag t">WebアプリのUIを作る人</span>
+          <span class="tag t">Google系サービスを使う人</span>
+          <span class="tag t">複数作業を並行したい人</span>
+        </div>
+        <div class="detail-ex">
+          <div class="detail-ex-label">具体的な使用例</div>
+          「ログイン画面を作って、ブラウザで表示確認して、崩れていたら直して」と依頼 → Antigravityがコードを書き、ブラウザで動作確認し、スクリーンショット付きで結果を報告。見た目の確認まで一気に任せられます。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="link-btns fade-in" style="margin-top:8px">
+    <a href="https://openai.com/index/introducing-codex/" target="_blank" rel="noopener" class="link-btn"><span class="lb-icon">🔗</span>Codex 公式</a>
+    <a href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank" rel="noopener" class="link-btn"><span class="lb-icon">🔗</span>Claude Code 公式</a>
+    <a href="https://antigravity.google" target="_blank" rel="noopener" class="link-btn"><span class="lb-icon">🔗</span>Antigravity 公式</a>
+  </div>
+</div></div>
+
+<!-- ===== B: タップで開く比較表 ===== -->
+<div class="sec"><div class="container">
+  <div class="sl">COMPARISON</div><div class="st">機能比較表 — 各項目をタップで解説</div>
+  <p class="sd">下の表は、各行をタップ（クリック）すると「その項目が何を意味するか」の解説が開きます。</p>
+
+  <div class="cmp-tap-hint fade-in">👆 各行をタップすると解説が開きます</div>
+
+  <div class="legend fade-in"><span><strong style="color:var(--gn)">◎</strong> 特に強い</span><span><strong style="color:var(--ac)">○</strong> 対応している</span><span><strong style="color:var(--or)">△</strong> 弱い・限定的</span></div>
+
+  <div class="fade-in">
+    <div class="cmp-row-head">
+      <div>機能・観点</div>
+      <div>Codex</div>
+      <div>Claude Code</div>
+      <div>Antigravity</div>
+    </div>
+    <div class="cmp-rows">
+      <div class="cmp-row" onclick="toggleCmp(this)">
+        <div class="cmp-row-main">
+          <div class="cmp-label"><span class="cmp-chev">▼</span>コード生成・バグ修正</div>
+          <div><span class="cmp-mark-ex">◎</span></div>
+          <div><span class="cmp-mark-ex">◎</span></div>
+          <div><span class="cmp-mark-ex">◎</span></div>
+        </div>
+        <div class="cmp-detail"><strong>コードを書いたり、間違い（バグ）を直したりする能力。</strong>AIコーディングの最も基本的な機能で、3つとも非常に高いレベルで対応しています。ここで大きな差はありません。</div>
+      </div>
+      <div class="cmp-row" onclick="toggleCmp(this)">
+        <div class="cmp-row-main">
+          <div class="cmp-label"><span class="cmp-chev">▼</span>コードレビュー</div>
+          <div style="font-size:11px">GitHub PR対応</div>
+          <div style="font-size:11px">CI/CD連携</div>
+          <div style="font-size:11px">成果物確認</div>
+        </div>
+        <div class="cmp-detail"><strong>書いたコードに問題がないかをチェックする作業。</strong>Codexは<span class="term" data-tip="GitHub PR：コードの変更提案。チームで「この変更を取り込んでいい？」と確認する仕組み。">GitHub上のレビュー</span>に対応。Claude Codeは<span class="term" data-tip="CI/CD：コード変更のたびにテスト・公開をAIが代行する仕組み。">CI/CD</span>（テストを代行する仕組み）との連携が得意。Antigravityはスクリーンショットなどの成果物で確認できます。</div>
+      </div>
+      <div class="cmp-row" onclick="toggleCmp(this)">
+        <div class="cmp-row-main">
+          <div class="cmp-label"><span class="cmp-chev">▼</span>ターミナル操作</div>
+          <div><span class="cmp-mark-ok">○</span></div>
+          <div><span class="cmp-mark-ex">◎</span></div>
+          <div><span class="cmp-mark-ok">○</span></div>
+        </div>
+        <div class="cmp-detail"><strong>ターミナル（文字でPCを操作する黒い画面）での作業のしやすさ。</strong>Claude Codeはこのターミナル操作を中心に設計されているため特に強力です。CodexとAntigravityも対応していますが、Claude Codeほど中心ではありません。</div>
+      </div>
+      <div class="cmp-row" onclick="toggleCmp(this)">
+        <div class="cmp-row-main">
+          <div class="cmp-label"><span class="cmp-chev">▼</span>ブラウザ検証</div>
+          <div><span class="cmp-mark-ok">○</span></div>
+          <div><span class="cmp-mark-ok">○</span></div>
+          <div><span class="cmp-mark-ex">◎</span></div>
+        </div>
+        <div class="cmp-detail"><strong>作ったWebページを実際にブラウザで開いて、見た目や動作を確認する機能。</strong>Antigravityはこれが最大の強み。AIが自分でブラウザを開いて表示を確認し、崩れていれば直してくれます。「見た目を作りながら確認したい」場合に最適です。</div>
+      </div>
+      <div class="cmp-row" onclick="toggleCmp(this)">
+        <div class="cmp-row-main">
+          <div class="cmp-label"><span class="cmp-chev">▼</span>複数エージェント</div>
+          <div><span class="cmp-mark-ok">○</span></div>
+          <div><span class="cmp-mark-ok">○</span></div>
+          <div><span class="cmp-mark-ex">◎</span></div>
+        </div>
+        <div class="cmp-detail"><strong>複数のAIを同時に動かして、別々の作業を並行で進める機能。</strong>Antigravityはこれを中心に据えた設計で、「司令塔」のように複数AIを管理できます。3つとも対応はしていますが、Antigravityが最も前面に出しています。</div>
+      </div>
+      <div class="cmp-row" onclick="toggleCmp(this)">
+        <div class="cmp-row-main">
+          <div class="cmp-label"><span class="cmp-chev">▼</span>Google Cloud連携</div>
+          <div><span class="cmp-mark-lt">△</span></div>
+          <div><span class="cmp-mark-lt">△</span></div>
+          <div><span class="cmp-mark-ex">◎</span></div>
+        </div>
+        <div class="cmp-detail"><strong>Googleのサービス（Firebase、Android、Google Cloudなど）との連携のしやすさ。</strong>AntigravityはGoogle製なので圧倒的に強力です。これらのGoogleサービスを使った開発をするなら、Antigravityが断然有利です。</div>
+      </div>
+      <div class="cmp-row" onclick="toggleCmp(this)">
+        <div class="cmp-row-main">
+          <div class="cmp-label"><span class="cmp-chev">▼</span>初心者の入りやすさ</div>
+          <div><span class="cmp-mark-ex">◎</span></div>
+          <div style="font-size:11px">開発者向き</div>
+          <div style="font-size:11px">慣れると強い</div>
+        </div>
+        <div class="cmp-detail"><strong>初めての人がどれだけ簡単に始められるか。</strong>CodexはChatGPTと同じ感覚で使えるため、初心者には最もやさしいです。Claude Codeはターミナル操作の知識が前提。Antigravityは多機能な分、慣れが必要です。<strong>迷ったらCodexから始めるのがおすすめ。</strong></div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<!-- 料金 + 注意点 -->
+<div class="sec sec-alt"><div class="container">
+  <div class="sl">料金（2026年6月時点・1ドル≒155円）</div><div class="st">料金・利用上限の目安</div>
+  <div class="tw fade-in" style="margin-bottom:20px;margin-top:8px">
     <table><thead><tr><th>ツール</th><th>プラン</th><th>月額</th><th>円目安</th><th>上限の目安</th></tr></thead>
     <tbody>
       <tr><td>Codex（コーデックス）</td><td>Free / Go / Plus / Pro</td><td>$0/$8/$20/$100〜</td><td>¥0〜約¥15,500</td><td>Plus：5時間に15〜80件。Proは5x〜20x</td></tr>
@@ -554,7 +837,7 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--tm);border-top:
       <tr><td>Antigravity（アンチグラビティ）</td><td>Pro/Ultra/上位Ultra</td><td>$20/$100/$200</td><td>約¥3,100〜¥31,000</td><td>Pro比5x〜20xの<span class="term" data-tip="クォータ制：回数ではなくトークン消費量で上限を管理する方式。">クォータ</span>枠</td></tr>
     </tbody></table>
   </div>
-  <div class="a-note fade-in">⚠️ <strong>どのツールも「最終確認は人間が必要」です。</strong>ファイル編集・外部サービス接続・本番反映は、AIが提案しても必ず人間が確認してから実行してください。</div>
+  <div class="a-note fade-in">⚠️ <strong>どのツールも「最終確認は人間が必要」です。</strong>AIは間違えることがあります。ファイル削除・外部サービス接続・本番環境への反映は、AIが提案しても必ず人間が確認してから実行してください。また、長い会話や大きなファイルを読み込むほど利用量の消費が増える点も注意が必要です。</div>
 </div></div>
 </div><!-- /t4 -->
 
@@ -716,6 +999,9 @@ function toggleFaq(el){
   const isOpen=item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
   if(!isOpen)item.classList.add('open');
+}
+function toggleCmp(el){
+  el.classList.toggle('open');
 }
 const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
 function observeFadeIns(){document.querySelectorAll('.fade-in:not(.visible)').forEach(el=>observer.observe(el))}
