@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AIで作ったものを世に出す — 全体地図</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&amp;family=DM+Serif+Display&amp;family=JetBrains+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f5f4f2;--sf:#fff;--bd:#e2e0db;--bl:#eeece8;--tp:#1a1917;--ts:#6b6860;--tm:#9e9b96;--ac:#2563eb;--al:#eff6ff;--ad:#1e40af;--gn:#16a34a;--gl:#f0fdf4;--or:#ea580c;--ol:#fff7ed;--pr:#7c3aed;--pl:#f5f3ff;--tl:#0891b2;--tll:#ecfeff;--sh:0 4px 12px rgba(0,0,0,.08);--r:8px;--rl:14px}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
@@ -261,6 +261,47 @@ tbody td:first-child{font-family:'JetBrains Mono',monospace;font-size:12px;font-
   .analogy-as{font-size:15px}
 }
 
+/* CASE CARDS */
+.case-group-label{display:flex;align-items:center;gap:10px;margin:24px 0 14px;font-size:13px;font-weight:700;color:var(--tp)}
+.case-group-label:first-of-type{margin-top:0}
+.case-lv{font-size:11px;font-weight:700;padding:3px 12px;border-radius:100px;flex-shrink:0}
+.case-lv.easy{background:#dcfce7;color:#15803d}
+.case-lv.mid{background:#fef9c3;color:#a16207}
+.case-lv.hard{background:#fee2e2;color:#b91c1c}
+.case-group-label .case-line{flex:1;height:1px;background:var(--bd)}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:760px){.case-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.case-grid{grid-template-columns:1fr}}
+.case-card{border:1px solid var(--bd);border-radius:var(--rl);overflow:hidden;background:var(--sf);transition:box-shadow .2s,transform .2s;display:flex;flex-direction:column}
+.case-card:hover{box-shadow:var(--sh);transform:translateY(-3px)}
+.case-top{padding:16px 16px 12px;border-bottom:1px solid var(--bl)}
+.case-emoji{font-size:30px;margin-bottom:8px;line-height:1}
+.case-name{font-size:14.5px;font-weight:700;margin-bottom:4px}
+.case-catch{font-size:12px;color:var(--ts);line-height:1.55}
+.case-body{padding:13px 16px;flex:1;display:flex;flex-direction:column;gap:9px}
+.case-meta{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.case-stars{font-size:12px;color:var(--or);font-weight:700;letter-spacing:1px}
+.case-period{font-size:11px;color:var(--tm)}
+.case-stack{display:flex;flex-wrap:wrap;gap:4px}
+.case-stack .st-chip{font-size:10.5px;font-weight:600;font-family:'JetBrains Mono',monospace;padding:2px 8px;border-radius:100px;background:var(--bg);border:1px solid var(--bl);color:var(--ts)}
+.case-value{font-size:12px;color:var(--ts);line-height:1.6;padding:9px 11px;background:var(--bg);border-radius:var(--r);border-left:3px solid var(--gn)}
+.case-value-label{font-size:10px;font-weight:700;color:var(--gn);margin-bottom:2px;text-transform:uppercase;letter-spacing:.05em}
+.case-link{margin-top:auto;font-size:11.5px;font-weight:600;color:var(--ac);background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;padding:4px 0;text-align:left;font-family:'Noto Sans JP',sans-serif}
+.case-link:hover{text-decoration:underline}
+
+/* NEXT BUTTON */
+.next-nav{display:flex;justify-content:center;padding:8px 24px 4px}
+.next-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:100px;background:var(--ac);color:white;border:none;font-family:'Noto Sans JP',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 4px 14px rgba(37,99,235,.25)}
+.next-btn:hover{background:var(--ad);transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,.35)}
+.next-btn .nb-label{display:flex;flex-direction:column;align-items:flex-start;line-height:1.2}
+.next-btn .nb-small{font-size:10.5px;font-weight:500;opacity:.85}
+.next-btn .nb-arrow{font-size:18px}
+
+/* BEGINNER NOTICE */
+.beginner-notice{background:var(--al);border:1px solid #bfdbfe;border-radius:var(--rl);padding:14px 18px;margin-bottom:22px;font-size:13px;color:var(--ad);line-height:1.75;display:flex;gap:10px;align-items:flex-start}
+.beginner-notice .bn-icon{font-size:18px;flex-shrink:0}
+.beginner-notice strong{color:var(--ad)}
+
 /* GLOSSARY */
 .gl-card{border:1px solid var(--bd);border-radius:var(--rl);padding:14px 16px;background:var(--sf);transition:box-shadow .15s}
 .gl-card:hover{box-shadow:0 1px 3px rgba(0,0,0,.06)}
@@ -361,8 +402,9 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--tm);border-top:
   <button class="tab-btn active" data-tab="t1" onclick="showTab('t1')"><span class="tab-icon">🗺</span>全体概念</button>
   <button class="tab-btn ph" data-tab="t2" onclick="showTab('t2')"><span class="tab-icon">🌐</span>公開サービス</button>
   <button class="tab-btn ph" data-tab="t3" onclick="showTab('t3')"><span class="tab-icon">⚙️</span>パターン・実践</button>
+  <button class="tab-btn ph" data-tab="tc" onclick="showTab('tc')"><span class="tab-icon">💡</span>制作事例 <span class="tab-new">NEW</span></button>
   <button class="tab-btn ph" data-tab="t4" onclick="showTab('t4')"><span class="tab-icon">🤖</span>エージェント比較</button>
-  <button class="tab-btn ph" data-tab="t5" onclick="showTab('t5')"><span class="tab-icon">🔒</span>セキュリティ・注意点 <span class="tab-new">NEW</span></button>
+  <button class="tab-btn ph" data-tab="t5" onclick="showTab('t5')"><span class="tab-icon">🔒</span>セキュリティ・注意点</button>
   <button class="tab-btn ph" data-tab="t6" onclick="showTab('t6')"><span class="tab-icon">📚</span>用語集・FAQ</button>
 </div></div>
 
@@ -437,6 +479,7 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--tm);border-top:
   <div style="margin-top:12px;font-size:13px;color:var(--ts);line-height:1.8;padding:12px 16px;background:var(--sf);border:1px solid var(--bd);border-radius:var(--rl);border-left:4px solid var(--ac);" class="fade-in">
     💡 <strong>判断基準：</strong>「AIにコードを書いてもらって公開したい」なら本ガイドのコード系が最適です。「マウスだけで完結させたい」ならBubbleなどのノーコードツールを検討してください。どちらも正解で、目的に合わせて選びましょう。
   </div>
+  <div class="next-nav fade-in" style="margin-top:32px"><button class="next-btn" onclick="showTab('t2')"><span class="nb-label"><span class="nb-small">次は</span>🌐 公開サービスを見る</span><span class="nb-arrow">→</span></button></div>
 </div></div>
 </div><!-- /t1 -->
 
@@ -450,7 +493,7 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--tm);border-top:
       <thead><tr><th>サービス名</th><th>向いているもの</th><th>難易度</th><th>費用</th><th>月額（円目安）</th><th>ポイント</th></tr></thead>
       <tbody>
         <tr><td>Vercel（ヴァーセル）</td><td>Next.js・Reactアプリ</td><td><span class="dp dp-e">初級〜</span></td><td><span class="cf">無料〜</span></td><td>¥0〜約¥3,100</td><td>Next.js開発元。プレビューURLが便利</td></tr>
-        <tr><td>Netlify（ネットリファイ）</td><td>LP・静的サイト・HTML</td><td><span class="dp dp-e">初級〜</span></td><td><span class="cf">無料〜</span></td><td>¥0〜約¥2,900</td><td>HTMLをドラッグ&ドロップで公開可</td></tr>
+        <tr><td>Netlify（ネットリファイ）</td><td>LP・静的サイト・HTML</td><td><span class="dp dp-e">初級〜</span></td><td><span class="cf">無料〜</span></td><td>¥0〜約¥2,900</td><td>HTMLをドラッグ&amp;ドロップで公開可</td></tr>
         <tr><td>Cloudflare Pages（クラウドフレア ページズ）</td><td>静的サイト・Astro</td><td><span class="dp dp-e">初級〜</span></td><td><span class="cf">無料〜</span></td><td>¥0〜</td><td>CDNで表示が速い。無料枠が広い</td></tr>
         <tr><td>GitHub Pages（ギットハブ ページズ）</td><td>HTMLポートフォリオ</td><td><span class="dp dp-e">初級</span></td><td><span class="cf">無料</span></td><td>¥0</td><td>シンプルな公開のみ。DB不可</td></tr>
         <tr><td>Firebase Hosting（ファイヤーベース）</td><td>Google系Webアプリ</td><td><span class="dp dp-m">中級</span></td><td><span class="cf">無料〜</span></td><td>¥0〜</td><td>認証・DBをまとめて管理</td></tr>
@@ -515,6 +558,7 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--tm);border-top:
     <a href="https://vuejs.org" target="_blank" rel="noopener" class="link-btn"><span class="lb-icon">🔗</span>Vue</a>
     <a href="https://svelte.dev" target="_blank" rel="noopener" class="link-btn"><span class="lb-icon">🔗</span>SvelteKit</a>
   </div>
+  <div class="next-nav fade-in" style="margin-top:32px"><button class="next-btn" onclick="showTab('t3')"><span class="nb-label"><span class="nb-small">次は</span>⚙️ パターン・実践を見る</span><span class="nb-arrow">→</span></button></div>
 </div></div>
 </div><!-- /t2 -->
 
@@ -543,7 +587,7 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--tm);border-top:
     <div class="step-arrow">→</div>
     <div class="step-item"><div class="step-circle gn">3</div><div class="step-name">Netlifyにアクセス</div><div class="step-desc">netlify.comでアカウント作成（無料）</div></div>
     <div class="step-arrow">→</div>
-    <div class="step-item"><div class="step-circle gn">4</div><div class="step-name">ドラッグ&ドロップ</div><div class="step-desc">ファイルをブラウザ上にドラッグするだけ</div></div>
+    <div class="step-item"><div class="step-circle gn">4</div><div class="step-name">ドラッグ&amp;ドロップ</div><div class="step-desc">ファイルをブラウザ上にドラッグするだけ</div></div>
     <div class="step-arrow">→</div>
     <div class="step-item"><div class="step-circle gn">5</div><div class="step-name">URL取得 🎉</div><div class="step-desc">myapp.netlify.appでアクセス可能に</div></div>
   </div>
@@ -580,13 +624,152 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--tm);border-top:
     <a href="https://supabase.com" target="_blank" rel="noopener" class="link-btn"><span class="lb-icon">🔗</span>Supabase</a>
     <a href="https://firebase.google.com" target="_blank" rel="noopener" class="link-btn"><span class="lb-icon">🔗</span>Firebase</a>
   </div>
+  <div class="next-nav fade-in" style="margin-top:32px"><button class="next-btn" onclick="showTab('tc')"><span class="nb-label"><span class="nb-small">次は</span>💡 制作事例を見る</span><span class="nb-arrow">→</span></button></div>
 </div></div>
 </div><!-- /t3 -->
+
+<!-- ================================================================ TAB CASES ================================================================ -->
+<div class="tab-panel" id="tc">
+<div class="sec"><div class="container">
+  <div class="sl">SHOWCASE</div><div class="st">💡 制作事例ギャラリー — AIで何が作れるのか</div>
+  <p class="sd">「結局、何が作れるの？」——AIを使って実際に作られているものを、難易度別に12種類紹介します。気になる事例の「このパターンで作れる」ボタンから、作り方の詳細にジャンプできます。</p>
+
+  <!-- EASY -->
+  <div class="case-group-label fade-in"><span class="case-lv easy">★☆☆ かんたん</span>まずはここから — HTML中心・DB不要<span class="case-line"></span></div>
+  <div class="case-grid fade-in">
+    <div class="case-card">
+      <div class="case-top"><div class="case-emoji">🔍</div><div class="case-name">診断・チェックツール</div><div class="case-catch">質問に答えると結果やタイプが表示される。</div></div>
+      <div class="case-body">
+        <div class="case-meta"><span class="case-stars">★☆☆</span><span class="case-period">目安：半日〜2日</span></div>
+        <div class="case-stack"><span class="st-chip">HTML</span><span class="st-chip">Netlify</span></div>
+        <div class="case-value"><div class="case-value-label">役立つ場面</div>集客・見込み客の獲得。SNSで拡散されやすく、サービスへの入口になる。</div>
+        <button class="case-link" onclick="showTab('t3')">→ パターン01（HTML+Netlify）で作れる</button>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-top"><div class="case-emoji">💰</div><div class="case-name">料金シミュレーター</div><div class="case-catch">条件を入力すると概算見積もりが表示される。</div></div>
+      <div class="case-body">
+        <div class="case-meta"><span class="case-stars">★☆☆</span><span class="case-period">目安：半日〜2日</span></div>
+        <div class="case-stack"><span class="st-chip">HTML</span><span class="st-chip">Netlify</span></div>
+        <div class="case-value"><div class="case-value-label">役立つ場面</div>営業の武器。問い合わせ前に概算が分かり、商談がスムーズになる。</div>
+        <button class="case-link" onclick="showTab('t3')">→ パターン01（HTML+Netlify）で作れる</button>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-top"><div class="case-emoji">📝</div><div class="case-name">文章整形・変換ツール</div><div class="case-catch">入力文をビジネス調・丁寧な表現などに整える。</div></div>
+      <div class="case-body">
+        <div class="case-meta"><span class="case-stars">★☆☆</span><span class="case-period">目安：1〜3日</span></div>
+        <div class="case-stack"><span class="st-chip">HTML</span><span class="st-chip">AI API</span><span class="st-chip">Netlify</span></div>
+        <div class="case-value"><div class="case-value-label">役立つ場面</div>メール返信やSNS投稿のトーン調整。日常業務の時短に直結する。</div>
+        <button class="case-link" onclick="showTab('t3')">→ パターン01〜02で作れる</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MID -->
+  <div class="case-group-label fade-in"><span class="case-lv mid">★★☆ 標準</span>本格的なアプリ — ログイン・データ保存あり<span class="case-line"></span></div>
+  <div class="case-grid fade-in">
+    <div class="case-card">
+      <div class="case-top"><div class="case-emoji">📋</div><div class="case-name">社内タスク管理ツール</div><div class="case-catch">組織のタスクを登録・割当・進捗管理する。</div></div>
+      <div class="case-body">
+        <div class="case-meta"><span class="case-stars">★★☆</span><span class="case-period">目安：1〜3週間</span></div>
+        <div class="case-stack"><span class="st-chip">Next.js</span><span class="st-chip">Supabase</span><span class="st-chip">Vercel</span></div>
+        <div class="case-value"><div class="case-value-label">役立つ場面</div>Excel管理からの脱却。チームの作業状況がひと目で分かるようになる。</div>
+        <button class="case-link" onclick="showTab('t3')">→ パターン02（Next.js+Supabase）で作れる</button>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-top"><div class="case-emoji">🔐</div><div class="case-name">会員制サイト</div><div class="case-catch">ログインした人だけがコンテンツを見られる。</div></div>
+      <div class="case-body">
+        <div class="case-meta"><span class="case-stars">★★☆</span><span class="case-period">目安：1〜3週間</span></div>
+        <div class="case-stack"><span class="st-chip">Next.js</span><span class="st-chip">Supabase</span><span class="st-chip">Vercel</span></div>
+        <div class="case-value"><div class="case-value-label">役立つ場面</div>有料コンテンツ配信・限定情報の提供。継続課金モデルにも発展できる。</div>
+        <button class="case-link" onclick="showTab('t3')">→ パターン02（Next.js+Supabase）で作れる</button>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-top"><div class="case-emoji">🌐</div><div class="case-name">ポータルサイト</div><div class="case-catch">複数の情報やリンクを1か所に集約する。</div></div>
+      <div class="case-body">
+        <div class="case-meta"><span class="case-stars">★★☆</span><span class="case-period">目安：1〜2週間</span></div>
+        <div class="case-stack"><span class="st-chip">Astro</span><span class="st-chip">Cloudflare</span></div>
+        <div class="case-value"><div class="case-value-label">役立つ場面</div>社内・業界向けの情報ハブ。散らばった情報を集約して迷子を防ぐ。</div>
+        <button class="case-link" onclick="showTab('t3')">→ パターン03（Astro+Cloudflare）で作れる</button>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-top"><div class="case-emoji">📅</div><div class="case-name">予約システム</div><div class="case-catch">日時を選んで予約・確認メールを受け取れる。</div></div>
+      <div class="case-body">
+        <div class="case-meta"><span class="case-stars">★★☆</span><span class="case-period">目安：2〜4週間</span></div>
+        <div class="case-stack"><span class="st-chip">Next.js</span><span class="st-chip">Supabase</span><span class="st-chip">Vercel</span></div>
+        <div class="case-value"><div class="case-value-label">役立つ場面</div>24時間受付で電話対応を削減。サロン・教室・面談予約などに。</div>
+        <button class="case-link" onclick="showTab('t3')">→ パターン02（Next.js+Supabase）で作れる</button>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-top"><div class="case-emoji">🛒</div><div class="case-name">ECサイト・ネットショップ</div><div class="case-catch">商品を並べてオンラインで販売・決済する。</div></div>
+      <div class="case-body">
+        <div class="case-meta"><span class="case-stars">★★☆</span><span class="case-period">目安：2〜4週間</span></div>
+        <div class="case-stack"><span class="st-chip">Next.js</span><span class="st-chip">決済API</span><span class="st-chip">Vercel</span></div>
+        <div class="case-value"><div class="case-value-label">役立つ場面</div>商品販売の入口。<span class="term" data-tip="決済API：StripeやPayPalなど、クレジットカード決済を組み込むための仕組み。">決済API</span>と連携してカード決済も可能に。</div>
+        <button class="case-link" onclick="showTab('t3')">→ パターン02（Next.js）で作れる</button>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-top"><div class="case-emoji">📚</div><div class="case-name">eラーニング・学習サイト</div><div class="case-catch">講座を配信し、受講者の進捗を記録する。</div></div>
+      <div class="case-body">
+        <div class="case-meta"><span class="case-stars">★★☆</span><span class="case-period">目安：2〜4週間</span></div>
+        <div class="case-stack"><span class="st-chip">Next.js</span><span class="st-chip">Supabase</span><span class="st-chip">Vercel</span></div>
+        <div class="case-value"><div class="case-value-label">役立つ場面</div>研修・講座の提供。受講履歴やテスト機能で学習をサポートできる。</div>
+        <button class="case-link" onclick="showTab('t3')">→ パターン02（Next.js+Supabase）で作れる</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HARD -->
+  <div class="case-group-label fade-in"><span class="case-lv hard">★★★ 応用</span>AI連携・高度な機能 — APIや外部サービス活用<span class="case-line"></span></div>
+  <div class="case-grid fade-in">
+    <div class="case-card">
+      <div class="case-top"><div class="case-emoji">🤖</div><div class="case-name">AIチャットボット</div><div class="case-catch">質問するとAIが対話形式で答えてくれる。</div></div>
+      <div class="case-body">
+        <div class="case-meta"><span class="case-stars">★★★</span><span class="case-period">目安：2〜5週間</span></div>
+        <div class="case-stack"><span class="st-chip">Next.js</span><span class="st-chip">AI API</span><span class="st-chip">Vercel</span></div>
+        <div class="case-value"><div class="case-value-label">役立つ場面</div>24時間の問い合わせ対応。最新感があり、サービスの目玉になる。</div>
+        <button class="case-link" onclick="showTab('t3')">→ パターン02＋AI API連携で作れる</button>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-top"><div class="case-emoji">❓</div><div class="case-name">FAQ・問い合わせボット</div><div class="case-catch">社内マニュアルやFAQをAIが検索して回答。</div></div>
+      <div class="case-body">
+        <div class="case-meta"><span class="case-stars">★★★</span><span class="case-period">目安：2〜5週間</span></div>
+        <div class="case-stack"><span class="st-chip">Next.js</span><span class="st-chip">AI API</span><span class="st-chip">Vercel</span></div>
+        <div class="case-value"><div class="case-value-label">役立つ場面</div>社内ナレッジ検索・カスタマーサポート。問い合わせ件数を削減できる。</div>
+        <button class="case-link" onclick="showTab('t3')">→ パターン02＋AI API連携で作れる</button>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-top"><div class="case-emoji">📱</div><div class="case-name">スマホアプリ化</div><div class="case-catch">Webアプリをスマホアプリとして公開する。</div></div>
+      <div class="case-body">
+        <div class="case-meta"><span class="case-stars">★★★</span><span class="case-period">目安：1〜2ヶ月</span></div>
+        <div class="case-stack"><span class="st-chip">React Native</span><span class="st-chip">Expo</span></div>
+        <div class="case-value"><div class="case-value-label">役立つ場面</div>App Store／Google Playで配布。実際にAIだけで個人が公開した例もある。</div>
+        <button class="case-link" onclick="showTab('t4')">→ AIエージェントの活用が効果的</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px;padding:16px 20px;background:var(--sf);border:1px solid var(--bd);border-radius:var(--rl);border-left:4px solid var(--ac);font-size:13px;color:var(--ts);line-height:1.8;" class="fade-in">
+    💡 <strong>「これ作ってみたい」が見つかったら：</strong>まずは★☆☆のかんたんな事例から始めるのがおすすめです。診断ツールや料金シミュレーターなら、HTMLファイル1枚で作って公開できます。慣れてきたら★★☆の本格的なアプリに挑戦しましょう。具体的な作り方は「パターン・実践」タブで確認できます。
+  </div>
+
+  <div class="next-nav fade-in" style="margin-top:28px"><button class="next-btn" onclick="showTab('t4')"><span class="nb-label"><span class="nb-small">次は</span>🤖 AIエージェント比較を見る</span><span class="nb-arrow">→</span></button></div>
+</div></div>
+</div><!-- /tc -->
 
 <!-- ================================================================ TAB 4 ================================================================ -->
 <div class="tab-panel" id="t4">
 <div class="sec"><div class="container">
   <div class="sl">STEP 07 — 2026年6月時点</div><div class="st">AI<span class="term" data-tip="コーディングエージェント：コードを書く・直す・テストするなど開発作業をAIが代行するツール。">コーディングエージェント</span> — 3つを徹底比較</div>
+  <div class="beginner-notice fade-in"><span class="bn-icon">💡</span><div><strong>初心者の方へ：</strong>このタブは「AIにコードを書いてもらう道具」の比較です。まず簡単なHTMLツールから始めたい方は、今すぐ読まなくてもOK。本格的な開発に進むときに戻ってきてください。<strong>迷ったらCodexを選べば間違いありません。</strong></div></div>
   <p class="sd">Codex・Claude Code・Antigravityはどれも「AIにコードを書いてもらう道具」です。<strong>できることは9割同じ。</strong>でも「性格」が違います。まずはたとえ話で、その違いを直感的につかみましょう。</p>
 
   <!-- ===== C: たとえ話 ===== -->
@@ -838,6 +1021,7 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--tm);border-top:
     </tbody></table>
   </div>
   <div class="a-note fade-in">⚠️ <strong>どのツールも「最終確認は人間が必要」です。</strong>AIは間違えることがあります。ファイル削除・外部サービス接続・本番環境への反映は、AIが提案しても必ず人間が確認してから実行してください。また、長い会話や大きなファイルを読み込むほど利用量の消費が増える点も注意が必要です。</div>
+  <div class="next-nav fade-in" style="margin-top:28px"><button class="next-btn" onclick="showTab('t5')"><span class="nb-label"><span class="nb-small">次は</span>🔒 セキュリティ・注意点を見る</span><span class="nb-arrow">→</span></button></div>
 </div></div>
 </div><!-- /t4 -->
 
@@ -902,6 +1086,7 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--tm);border-top:
     <div class="card"><div class="card-head"><strong>パターンA：並行運用（おすすめ）</strong></div><div class="card-body"><p style="font-size:12.5px;color:var(--ts);line-height:1.7;">会社サイト・ブログはWordPressのまま運用。AIで作ったツールやLPは別ドメインまたはサブドメインでVercel/Netlifyに公開。<br><br><strong>例：</strong><br>会社サイト → www.example.com（WordPress）<br>AIツール → tool.example.com（Vercel）</p></div></div>
     <div class="card"><div class="card-head"><strong>パターンB：ヘッドレスCMS化（上級）</strong></div><div class="card-body"><p style="font-size:12.5px;color:var(--ts);line-height:1.7;">WordPressを<span class="term" data-tip="ヘッドレスCMS：コンテンツ管理だけWordPressで行い、表示部分はNext.jsやAstroで作る方式。表示速度・自由度が大幅に上がる。">ヘッドレスCMS</span>として使い、表示部分をNext.js/Astroで作る。記事はWordPressで管理しつつ表示は高速化できる。<br><br><strong>メリット：</strong>速度向上・自由なデザイン<br><strong>デメリット：</strong>構築に技術知識が必要</p></div></div>
   </div>
+  <div class="next-nav fade-in" style="margin-top:32px"><button class="next-btn" onclick="showTab('t6')"><span class="nb-label"><span class="nb-small">次は</span>📚 用語集・FAQを見る</span><span class="nb-arrow">→</span></button></div>
 </div></div>
 </div><!-- /t5 -->
 
@@ -933,7 +1118,7 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--tm);border-top:
 <div class="sec sec-alt"><div class="container">
   <div class="sl">FAQ</div><div class="st">よくある疑問を先回り解消</div><p class="sd">クリックすると答えが開きます。</p>
   <div class="faq-list fade-in">
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-text"><span class="faq-q-icon">🤔</span>VercelとNetlify、どっちを使えばいい？</div><span class="faq-chev">▼</span></div><div class="faq-a"><strong>Next.jsならVercel、HTMLやAstroのLPならNetlifyが最適。</strong>VercelはNext.js開発元で機能を最大限活かせます。NetlifyはHTMLをドラッグ&ドロップで公開でき簡単です。</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-text"><span class="faq-q-icon">🤔</span>VercelとNetlify、どっちを使えばいい？</div><span class="faq-chev">▼</span></div><div class="faq-a"><strong>Next.jsならVercel、HTMLやAstroのLPならNetlifyが最適。</strong>VercelはNext.js開発元で機能を最大限活かせます。NetlifyはHTMLをドラッグ&amp;ドロップで公開でき簡単です。</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-text"><span class="faq-q-icon">🤔</span>Next.jsとAstro、どちらで作ればいい？</div><span class="faq-chev">▼</span></div><div class="faq-a"><strong>ページ中心（LP・ブログ）ならAstro、動的機能があるアプリならNext.js。</strong>AIがNext.jsでコードを出力した場合はそのままNext.jsを使うのが最も効率的です。</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-text"><span class="faq-q-icon">🤔</span>無料で公開できますか？費用はどれくらい？</div><span class="faq-chev">▼</span></div><div class="faq-a"><strong>最初は無料で公開できます。</strong>Vercel・Netlify・Cloudflare Pagesはいずれも個人利用は無料です。アクセスが増えたり商用利用すると有料プラン（月数千円〜）が必要になります。まずは無料枠で始めましょう。</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><div class="faq-q-text"><span class="faq-q-icon">🤔</span>AIが作ったコードをそのまま公開できますか？</div><span class="faq-chev">▼</span></div><div class="faq-a"><strong>多くの場合はできますが確認が必要です。</strong>HTML一枚→Netlifyにドラッグ。Next.js→GitHub＋Vercel連携。ただしAPIキーが含まれている場合は環境変数に隠す必要があります。「セキュリティ・注意点」タブを必ず確認してください。</div></div>
@@ -947,7 +1132,7 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--tm);border-top:
 <div class="sec"><div class="container">
   <div class="sl">ROADMAP</div><div class="st">学習ロードマップ</div><p class="sd">段階を踏むことが最短ルートです。</p>
   <div class="rm fade-in">
-    <div class="rm-step"><div class="rm-dot s1">1</div><div class="rm-c"><div class="rm-stage">まずはここから</div><div class="rm-title">HTMLのLPをNetlifyで公開する</div><div class="rm-body">AIにHTMLで出力してもらい、Netlifyのドラッグ&ドロップで公開する体験をする。完成度より完了を目指す。</div><div class="rm-tags"><span class="tag g">HTML</span><span class="tag g">Netlify</span></div></div></div>
+    <div class="rm-step"><div class="rm-dot s1">1</div><div class="rm-c"><div class="rm-stage">まずはここから</div><div class="rm-title">HTMLのLPをNetlifyで公開する</div><div class="rm-body">AIにHTMLで出力してもらい、Netlifyのドラッグ&amp;ドロップで公開する体験をする。完成度より完了を目指す。</div><div class="rm-tags"><span class="tag g">HTML</span><span class="tag g">Netlify</span></div></div></div>
     <div class="rm-step"><div class="rm-dot s2">2</div><div class="rm-c"><div class="rm-stage">次のステップ</div><div class="rm-title">GitHub連携でVercelから一括公開</div><div class="rm-body">GitHubにコードを置き、Vercelと連携。コード変更のたびにサイトが即座に更新される。</div><div class="rm-tags"><span class="tag b">GitHub</span><span class="tag b">Vercel</span><span class="tag b">Next.js</span></div></div></div>
     <div class="rm-step"><div class="rm-dot s3">3</div><div class="rm-c"><div class="rm-stage">応用</div><div class="rm-title">Supabaseでログイン・データ保存を追加</div><div class="rm-body">登録・ログイン・履歴保存ができるアプリを作る。「本格的なWebアプリ」の段階。</div><div class="rm-tags"><span class="tag o">Supabase</span><span class="tag o">認証</span></div></div></div>
     <div class="rm-step"><div class="rm-dot s4">4</div><div class="rm-c"><div class="rm-stage">発展</div><div class="rm-title">独自APIの構築・スケールアップ</div><div class="rm-body">PythonやNode.jsでバックエンドAPIを作成。大規模運用へ。</div><div class="rm-tags"><span class="tag p">Python</span><span class="tag p">Render</span><span class="tag p">AWS</span></div></div></div>
