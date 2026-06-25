@@ -302,6 +302,65 @@ tbody td:first-child{font-family:'JetBrains Mono',monospace;font-size:12px;font-
 .beginner-notice .bn-icon{font-size:18px;flex-shrink:0}
 .beginner-notice strong{color:var(--ad)}
 
+/* VIBE CODING */
+.vibe-hero{background:linear-gradient(135deg,#1e293b,#334155);color:white;border-radius:var(--rl);padding:28px 28px;margin-bottom:20px;position:relative;overflow:hidden}
+.vibe-hero::after{content:'✨';position:absolute;top:16px;right:20px;font-size:40px;opacity:.2}
+.vibe-label{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:#fcd34d;background:rgba(252,211,77,.15);border:1px solid rgba(252,211,77,.4);border-radius:100px;padding:3px 12px;margin-bottom:12px;letter-spacing:.05em}
+.vibe-hero h3{font-size:20px;font-weight:700;margin-bottom:10px;line-height:1.4}
+.vibe-hero h3 em{font-style:normal;color:#fcd34d}
+.vibe-hero p{font-size:13.5px;color:#cbd5e1;line-height:1.85}
+.vibe-hero strong{color:white}
+.vibe-flow{display:flex;align-items:stretch;gap:0;overflow-x:auto;padding:4px 0;margin-top:18px}
+.vibe-step{flex-shrink:0;min-width:120px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:var(--r);padding:12px 14px;text-align:center}
+.vibe-step-n{font-size:11px;font-weight:700;color:#fcd34d;margin-bottom:4px}
+.vibe-step-t{font-size:12px;color:white;line-height:1.45;font-weight:500}
+.vibe-flow-arrow{flex-shrink:0;color:rgba(255,255,255,.4);align-self:center;padding:0 8px;font-size:16px}
+.vibe-tldr{display:flex;gap:14px;margin-top:18px;flex-wrap:wrap}
+.vibe-tldr-item{flex:1;min-width:200px;display:flex;gap:10px;align-items:flex-start}
+.vibe-tldr-emoji{font-size:20px;flex-shrink:0}
+.vibe-tldr-text{font-size:12.5px;color:#cbd5e1;line-height:1.6}
+.vibe-tldr-text strong{color:#fcd34d;display:block;margin-bottom:2px;font-size:12.5px}
+
+/* 3-CONCEPT COMPARISON (vibe/nocode/traditional) */
+.vnt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+@media(max-width:680px){.vnt-grid{grid-template-columns:1fr}}
+.vnt-card{border:1px solid var(--bd);border-radius:var(--rl);overflow:hidden;background:var(--sf)}
+.vnt-head{padding:12px 16px;font-size:13px;font-weight:700;border-bottom:1px solid var(--bl)}
+.vnt-head.vibe{background:#fffbeb;color:#92400e}
+.vnt-head.nocode{background:var(--pl);color:var(--pr)}
+.vnt-head.trad{background:var(--bg);color:var(--ts)}
+.vnt-body{padding:12px 16px;font-size:12.5px;color:var(--ts);line-height:1.7}
+.vnt-body strong{color:var(--tp)}
+
+/* RELATIONSHIP DIAGRAM */
+.rel-diagram{background:var(--sf);border:1px solid var(--bd);border-radius:var(--rl);padding:26px 22px;overflow-x:auto}
+.rel-stage{display:flex;align-items:center;gap:0;min-width:680px}
+.rel-node{flex-shrink:0;border-radius:var(--rl);padding:14px 16px;text-align:center;position:relative;width:130px}
+.rel-node-icon{font-size:26px;margin-bottom:6px}
+.rel-node-name{font-size:12.5px;font-weight:700;font-family:'JetBrains Mono',monospace;margin-bottom:3px}
+.rel-node-role{font-size:10.5px;line-height:1.4;opacity:.85}
+.rel-node.you{background:#f1f5f9;border:2px solid var(--slate);color:var(--slate)}
+.rel-node.ai{background:var(--al);border:2px solid var(--ac);color:var(--ad)}
+.rel-node.local{background:#f1f5f9;border:2px solid #64748b;color:#334155}
+.rel-node.git{background:var(--ol);border:2px solid var(--or);color:#9a3412}
+.rel-node.host{background:var(--gl);border:2px solid var(--gn);color:#166534}
+.rel-node.db{background:#fef2f2;border:2px solid #ef4444;color:#991b1b}
+.rel-node.user{background:#f5f3ff;border:2px solid var(--pr);color:#5b21b6}
+.rel-arrow{flex:1;min-width:30px;display:flex;flex-direction:column;align-items:center;color:var(--tm);position:relative}
+.rel-arrow-line{font-size:18px}
+.rel-arrow-lbl{font-size:9.5px;color:var(--tm);white-space:nowrap;margin-top:2px}
+.rel-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;padding-top:16px;border-top:1px solid var(--bl)}
+.rel-leg-item{display:flex;gap:8px;align-items:flex-start;flex:1;min-width:200px}
+.rel-leg-dot{width:12px;height:12px;border-radius:3px;flex-shrink:0;margin-top:3px}
+.rel-leg-text{font-size:12px;color:var(--ts);line-height:1.55}
+.rel-leg-text strong{color:var(--tp);font-family:'JetBrains Mono',monospace;font-size:12px}
+
+/* CASE NOTE (注意点) */
+.case-note{font-size:11.5px;color:#92400e;line-height:1.6;padding:8px 11px;background:#fffbeb;border-radius:var(--r);border-left:3px solid #f59e0b;margin-top:2px}
+.case-note-label{font-size:10px;font-weight:700;color:#b45309;margin-bottom:2px;text-transform:uppercase;letter-spacing:.04em}
+.case-scale-desc{font-size:12.5px;color:var(--ts);line-height:1.7;margin-bottom:14px;padding:12px 16px;background:var(--sf);border:1px solid var(--bd);border-radius:var(--rl)}
+.case-scale-desc strong{color:var(--tp)}
+
 /* GLOSSARY */
 .gl-card{border:1px solid var(--bd);border-radius:var(--rl);padding:14px 16px;background:var(--sf);transition:box-shadow .15s}
 .gl-card:hover{box-shadow:0 1px 3px rgba(0,0,0,.06)}
@@ -419,6 +478,118 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--tm);border-top:
   <p class="hero-sub">「作る道具」「公開する場所」「保存する場所」の3つに分けると混乱が一気に解決します。<br><small>下線の用語はカーソルを当てると解説が出ます</small></p>
   <div class="hero-badges"><span class="badge">🛠 作る道具</span><span class="badge">🌐 公開する場所</span><span class="badge">🗄 保存する場所</span></div>
 </div>
+
+<!-- VIBE CODING -->
+<div class="sec"><div class="container">
+  <div class="sl">INTRODUCTION</div><div class="st">そもそも「バイブコーディング」とは？</div>
+  <p class="sd">AIで何かを作る——その新しい開発スタイルには名前がついています。まずこの言葉を理解しておくと、サイト全体がぐっと分かりやすくなります。</p>
+
+  <div class="vibe-hero fade-in">
+    <div class="vibe-label">✨ VIBE CODING</div>
+    <h3>バイブコーディング ＝ <em>AIと会話しながら作る</em>新しい開発スタイル</h3>
+    <p>
+      <span class="term" data-tip="バイブ（Vibe）：英語で「雰囲気・ノリ・感覚」の意味。">バイブ</span>（雰囲気・ノリ）＋コーディング（開発）を組み合わせた言葉です。
+      従来は「コードを1行ずつ手で書く」のが当たり前でしたが、バイブコーディングでは<strong>「こういうアプリが欲しい」と自然な言葉でAIに伝えるだけ</strong>でコードが生成されます。
+      2025年にAI研究者アンドレイ・カルパシー氏が名付け、英国コリンズ辞典の「2025年 今年の言葉」にも選ばれました。<strong>専門知識がない人でもアプリを作れる時代</strong>になりつつあります。
+    </p>
+    <div class="vibe-flow">
+      <div class="vibe-step"><div class="vibe-step-n">STEP 1</div><div class="vibe-step-t">作りたいものを<br>言葉で伝える</div></div>
+      <div class="vibe-flow-arrow">→</div>
+      <div class="vibe-step"><div class="vibe-step-n">STEP 2</div><div class="vibe-step-t">AIがコードを<br>一括生成</div></div>
+      <div class="vibe-flow-arrow">→</div>
+      <div class="vibe-step"><div class="vibe-step-n">STEP 3</div><div class="vibe-step-t">「ここを直して」<br>と対話で改善</div></div>
+      <div class="vibe-flow-arrow">→</div>
+      <div class="vibe-step"><div class="vibe-step-n">STEP 4</div><div class="vibe-step-t">動作を確認<br>して公開</div></div>
+    </div>
+    <div class="vibe-tldr">
+      <div class="vibe-tldr-item"><span class="vibe-tldr-emoji">🎯</span><div class="vibe-tldr-text"><strong>本質はここ</strong>「コードを書く力」より「何を作りたいかを言葉にする力」が重要になった</div></div>
+      <div class="vibe-tldr-item"><span class="vibe-tldr-emoji">⚡</span><div class="vibe-tldr-text"><strong>最大の強み</strong>アイデアから動くものまでが圧倒的に速い。試作・検証に最適</div></div>
+      <div class="vibe-tldr-item"><span class="vibe-tldr-emoji">⚠️</span><div class="vibe-tldr-text"><strong>注意点</strong>AI生成コードには不具合や脆弱性が混ざることも。最終確認は人間が必須</div></div>
+    </div>
+  </div>
+
+  <!-- 3概念の違い -->
+  <div style="font-size:13px;font-weight:700;margin-bottom:4px;">よく混同される3つの開発スタイルの違い</div>
+  <div style="font-size:12.5px;color:var(--ts);margin-bottom:8px;">「ノーコード」「ローコード」とも似ていますが、別物です。</div>
+  <div class="vnt-grid fade-in">
+    <div class="vnt-card">
+      <div class="vnt-head vibe">✨ バイブコーディング</div>
+      <div class="vnt-body">AIに言葉で指示して<strong>本物のコードを生成</strong>。自由度が高く、何でも作れて移植も自由。<strong>本ガイドが扱う範囲。</strong></div>
+    </div>
+    <div class="vnt-card">
+      <div class="vnt-head nocode">🧩 ノーコード</div>
+      <div class="vnt-body">Bubble等で<strong>マウス操作だけ</strong>で作る。手軽だが、ツールの制約内でしか作れずカスタマイズに限界がある。</div>
+    </div>
+    <div class="vnt-card">
+      <div class="vnt-head trad">⌨️ 従来の手書き開発</div>
+      <div class="vnt-body">エンジニアが<strong>1行ずつコードを書く</strong>。最も自由で確実だが、専門知識と時間が必要。</div>
+    </div>
+  </div>
+</div></div>
+
+<!-- TOOL RELATIONSHIP DIAGRAM -->
+<div class="sec sec-alt"><div class="container">
+  <div class="sl">RELATIONSHIP</div><div class="st">ツールの関係性 — データはこう流れる</div>
+  <p class="sd">GitHub・Vercel・Supabaseなど、よく出てくるツールが「どこに位置し、どうつながるか」を図で理解しましょう。一連の流れが分かると、各ツールの役割がスッと頭に入ります。</p>
+
+  <div class="rel-diagram fade-in">
+    <div class="rel-stage">
+      <div class="rel-node ai">
+        <div class="rel-node-icon">🤖</div>
+        <div class="rel-node-name">AI</div>
+        <div class="rel-node-role">Claude / Cursor<br>コードを生成</div>
+      </div>
+      <div class="rel-arrow"><div class="rel-arrow-line">→</div><div class="rel-arrow-lbl">コード出力</div></div>
+      <div class="rel-node local">
+        <div class="rel-node-icon">💻</div>
+        <div class="rel-node-name">ローカル</div>
+        <div class="rel-node-role">自分のPC<br>編集・確認</div>
+      </div>
+      <div class="rel-arrow"><div class="rel-arrow-line">→</div><div class="rel-arrow-lbl">push（保存）</div></div>
+      <div class="rel-node git">
+        <div class="rel-node-icon">🔀</div>
+        <div class="rel-node-name">GitHub</div>
+        <div class="rel-node-role">コード保管・<br>変更履歴管理</div>
+      </div>
+      <div class="rel-arrow"><div class="rel-arrow-line">→</div><div class="rel-arrow-lbl">連携・配信</div></div>
+      <div class="rel-node host">
+        <div class="rel-node-icon">🌐</div>
+        <div class="rel-node-name">Vercel</div>
+        <div class="rel-node-role">ビルド・公開<br>（ホスティング）</div>
+      </div>
+      <div class="rel-arrow"><div class="rel-arrow-line">→</div><div class="rel-arrow-lbl">アクセス</div></div>
+      <div class="rel-node user">
+        <div class="rel-node-icon">👥</div>
+        <div class="rel-node-name">利用者</div>
+        <div class="rel-node-role">URLで<br>サイトを見る</div>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:10px;margin-top:18px;padding-top:16px;border-top:1px dashed var(--bd);">
+      <div class="rel-node db" style="width:auto;min-width:130px;">
+        <div class="rel-node-icon">🗄️</div>
+        <div class="rel-node-name">Supabase / Firebase</div>
+        <div class="rel-node-role">データベース（保存庫）</div>
+      </div>
+      <div style="font-size:12.5px;color:var(--ts);line-height:1.65;flex:1;">
+        ← ログイン情報や投稿データを保存する必要があるときだけ、<strong>Vercelで動くアプリ</strong>とつながります。「保存する場所」を担当し、必要なアプリにだけ接続されます。
+      </div>
+    </div>
+
+    <div class="rel-legend">
+      <div class="rel-leg-item"><div class="rel-leg-dot" style="background:var(--ac)"></div><div class="rel-leg-text"><strong>AI</strong>：コードを書いてくれる頭脳。Claude・Cursor・Codexなど</div></div>
+      <div class="rel-leg-item"><div class="rel-leg-dot" style="background:#64748b"></div><div class="rel-leg-text"><strong>ローカル</strong>：自分のPC上の作業場。コードを編集・確認する</div></div>
+      <div class="rel-leg-item"><div class="rel-leg-dot" style="background:var(--or)"></div><div class="rel-leg-text"><strong>GitHub</strong>：コードの保管庫＆変更履歴の管理役。元に戻せる</div></div>
+      <div class="rel-leg-item"><div class="rel-leg-dot" style="background:var(--gn)"></div><div class="rel-leg-text"><strong>Vercel</strong>：公開役。GitHubと連携し、URLでアクセスできる状態にする</div></div>
+      <div class="rel-leg-item"><div class="rel-leg-dot" style="background:#ef4444"></div><div class="rel-leg-text"><strong>Supabase</strong>：データの保存庫。ログインや履歴保存が必要なとき使う</div></div>
+      <div class="rel-leg-item"><div class="rel-leg-dot" style="background:var(--pr)"></div><div class="rel-leg-text"><strong>利用者</strong>：完成したサイトをURLから見る人</div></div>
+    </div>
+  </div>
+
+  <div style="margin-top:16px;padding:14px 18px;background:var(--sf);border:1px solid var(--bd);border-radius:var(--rl);border-left:4px solid var(--gn);font-size:13px;color:var(--ts);line-height:1.8;" class="fade-in">
+    💡 <strong>覚え方：</strong>「AIが書く → PCで確認 → GitHubに保管 → Vercelで公開 → 利用者が見る」。この一本道に、必要なら「Supabase（保存庫）」が脇から接続される、というイメージです。最初はGitHubとVercelの2つだけ押さえればOKです。
+  </div>
+</div></div>
 
 <div class="sec"><div class="container">
   <div class="sl">STEP 01</div><div class="st">まず「3つの概念」を分けて理解する</div>
@@ -632,10 +803,14 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--tm);border-top:
 <div class="tab-panel" id="tc">
 <div class="sec"><div class="container">
   <div class="sl">SHOWCASE</div><div class="st">💡 制作事例ギャラリー — AIで何が作れるのか</div>
-  <p class="sd">「結局、何が作れるの？」——AIを使って実際に作られているものを、難易度別に12種類紹介します。気になる事例の「このパターンで作れる」ボタンから、作り方の詳細にジャンプできます。</p>
+  <p class="sd">「結局、何が作れるの？」——AIを使って実際に作られているものを、<strong>小規模・中規模・大規模</strong>の3カテゴリで紹介します。規模ごとに注意点も載せているので、自分に合ったところから挑戦してください。気になる事例の「作れる」ボタンから作り方にジャンプできます。</p>
 
-  <!-- EASY -->
-  <div class="case-group-label fade-in"><span class="case-lv easy">★☆☆ かんたん</span>まずはここから — HTML中心・DB不要<span class="case-line"></span></div>
+  <!-- 小規模 -->
+  <div class="case-group-label fade-in"><span class="case-lv easy">小規模</span>まず試すならここ — HTML中心・DB不要<span class="case-line"></span></div>
+  <div class="case-scale-desc fade-in">
+    <strong>小規模とは：</strong>1ファイル〜数ファイルで完結する、ログイン不要のシンプルなツール。<strong>半日〜数日</strong>で完成し、AIに「HTML一枚で作って」と頼めばそのまま公開できます。バイブコーディング入門に最適です。
+    <div class="case-note" style="margin-top:8px;"><div class="case-note-label">⚠️ この規模の注意点</div>データ保存ができないため「入力内容を記録する」用途には不向き。あくまで「その場で完結する」ツール向きです。</div>
+  </div>
   <div class="case-grid fade-in">
     <div class="case-card">
       <div class="case-top"><div class="case-emoji">🔍</div><div class="case-name">診断・チェックツール</div><div class="case-catch">質問に答えると結果やタイプが表示される。</div></div>
@@ -666,8 +841,12 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--tm);border-top:
     </div>
   </div>
 
-  <!-- MID -->
-  <div class="case-group-label fade-in"><span class="case-lv mid">★★☆ 標準</span>本格的なアプリ — ログイン・データ保存あり<span class="case-line"></span></div>
+  <!-- 中規模 -->
+  <div class="case-group-label fade-in"><span class="case-lv mid">中規模</span>本格的なアプリ — ログイン・データ保存あり<span class="case-line"></span></div>
+  <div class="case-scale-desc fade-in">
+    <strong>中規模とは：</strong>ログイン機能やデータベースを伴う、複数画面のWebアプリ。<strong>1週間〜1ヶ月</strong>ほどかかり、Next.js＋Supabaseなどの構成が必要です。GitHubでの管理が実質必須になります。
+    <div class="case-note" style="margin-top:8px;"><div class="case-note-label">⚠️ この規模の注意点</div>ログイン情報やデータを扱うため<strong>セキュリティ対策が必須</strong>。APIキーの管理、データの保護、バックアップを必ず検討してください（「セキュリティ・注意点」タブ参照）。</div>
+  </div>
   <div class="case-grid fade-in">
     <div class="case-card">
       <div class="case-top"><div class="case-emoji">📋</div><div class="case-name">社内タスク管理ツール</div><div class="case-catch">組織のタスクを登録・割当・進捗管理する。</div></div>
@@ -725,8 +904,12 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--tm);border-top:
     </div>
   </div>
 
-  <!-- HARD -->
-  <div class="case-group-label fade-in"><span class="case-lv hard">★★★ 応用</span>AI連携・高度な機能 — APIや外部サービス活用<span class="case-line"></span></div>
+  <!-- 大規模 -->
+  <div class="case-group-label fade-in"><span class="case-lv hard">大規模</span>AI連携・高度な機能 — 本格運用・チーム開発<span class="case-line"></span></div>
+  <div class="case-scale-desc fade-in">
+    <strong>大規模とは：</strong>AI連携・外部API・スマホアプリ化など、高度な機能を持つ本格的なサービス。<strong>1ヶ月以上</strong>かかり、運用・保守も視野に入ります。多くの利用者を想定した設計が必要です。
+    <div class="case-note" style="margin-top:8px;"><div class="case-note-label">⚠️ この規模の注意点</div>AI生成コードは<strong>最大62%に脆弱性が混入する</strong>という調査もあり、本番運用には専門家のレビューが推奨されます。バイブコーディングは試作向き。重要なシステムは「テスト・品質チェック・セキュリティ確認」の3点を必ず挟みましょう。</div>
+  </div>
   <div class="case-grid fade-in">
     <div class="case-card">
       <div class="case-top"><div class="case-emoji">🤖</div><div class="case-name">AIチャットボット</div><div class="case-catch">質問するとAIが対話形式で答えてくれる。</div></div>
@@ -758,7 +941,7 @@ footer{text-align:center;padding:24px;font-size:12px;color:var(--tm);border-top:
   </div>
 
   <div style="margin-top:24px;padding:16px 20px;background:var(--sf);border:1px solid var(--bd);border-radius:var(--rl);border-left:4px solid var(--ac);font-size:13px;color:var(--ts);line-height:1.8;" class="fade-in">
-    💡 <strong>「これ作ってみたい」が見つかったら：</strong>まずは★☆☆のかんたんな事例から始めるのがおすすめです。診断ツールや料金シミュレーターなら、HTMLファイル1枚で作って公開できます。慣れてきたら★★☆の本格的なアプリに挑戦しましょう。具体的な作り方は「パターン・実践」タブで確認できます。
+    💡 <strong>「これ作ってみたい」が見つかったら：</strong>まずは<strong>小規模</strong>の事例から始めるのがおすすめです。診断ツールや料金シミュレーターなら、HTMLファイル1枚で作って公開できます。慣れてきたら中規模・大規模に挑戦しましょう。具体的な作り方は「パターン・実践」タブで確認できます。
   </div>
 
   <div class="next-nav fade-in" style="margin-top:28px"><button class="next-btn" onclick="showTab('t4')"><span class="nb-label"><span class="nb-small">次は</span>🤖 AIエージェント比較を見る</span><span class="nb-arrow">→</span></button></div>
